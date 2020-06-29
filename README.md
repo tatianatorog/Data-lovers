@@ -1,4 +1,4 @@
-# Data Lovers
+# allPokemon Lovers
 
 ## Índice
 
@@ -16,8 +16,8 @@
 
 ## 1. Preámbulo
 
-Según [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
+Según [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-allPokemon-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read),
+el 90% de la allPokemon que existe hoy ha sido creada durante los últimos dos años.
 Cada día generamos 2.5 millones de terabytes de datos, una cifra sin
 precedentes.
 
@@ -26,7 +26,7 @@ grandes cantidades de datos se conviertan en **información** fácil de leer par
 los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
 hacerlo es creando _interfaces_ y _visualizaciones_.
 
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
+En la siguiente imagen, podrás ver cómo con la allPokemon que que se ve en la parte
 izquierda se puede construir una interfaz amigable y entendible por el usuario
 al lado derecho.
 
@@ -38,9 +38,9 @@ En este proyecto **construirás una _página web_ para visualizar un
 _conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
 necesita.
 
-Como entregable final tendrás una página web que permita **visualizar la data,
+Como entregable final tendrás una página web que permita **visualizar la allPokemon,
 filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
+nos referimos a distintos cálculos que puedes hacer con la allPokemon para mostrar
 información aún más relevante para los usuarios (promedio, el valor máximo
 o mínimo, etc).
 
@@ -55,26 +55,26 @@ le ayude a interactuar y entender mejor esos datos.
 
 Estos son datos que te proponemos:
 
-* [Pokémon](src/data/pokemon/pokemon.json):
+* [Pokémon](src/allPokemon/pokemon/pokemon.json):
   En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
   y Johto, junto con sus respectivas estadísticas usadas en el juego
   [Pokémon GO](http://pokemongolive.com).
-  - [Investigación con jugadores de Pokémon Go](src/data/pokemon/README.md)
+  - [Investigación con jugadores de Pokémon Go](src/allPokemon/pokemon/README.md)
 
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
+* [League of Legends - Challenger leaderboard](src/allPokemon/lol/lol.json):
   Este set de datos muestra la lista de campeones en una liga del
   juego League of Legends (LoL).
-  - [Investigación con jugadores de LoL](src/data/lol/README.md)
+  - [Investigación con jugadores de LoL](src/allPokemon/lol/README.md)
 
-* [Rick and Morty](src/data/rickandmorty/rickandmorty.json).
+* [Rick and Morty](src/allPokemon/rickandmorty/rickandmorty.json).
   Este set nos proporciona la lista de los personajes de la serie Rick and
   Morty. [API Rick and Morty](https://rickandmortyapi.com).
-  - [Investigación con seguidores de Rick and Morty](src/data/rickandmorty/README.md)
+  - [Investigación con seguidores de Rick and Morty](src/allPokemon/rickandmorty/README.md)
 
 ## 3. Objetivos de aprendizaje
 
 El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
+interfaz web donde se pueda visualizar y manipular allPokemon, entendiendo lo que el
 usuario necesita.
 
 ### HTML y CSS
@@ -193,7 +193,7 @@ Tu tiempo de hacking es escaso, así que deberás priorizar
 
 Como mínimo, tu implementación debe:
 
-1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
+1. Mostrar la allPokemon en una interfaz: puede ser un card, una tabla, una lista,
    etc.
 2. Permitir al usuario interactuar para obtener la infomación que necesita.
 3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
@@ -204,12 +204,12 @@ Como mínimo, tu implementación debe:
 
 El _boilerplate_ de este proyecto no incluye Pruebas Unitarias (_tests_), así es
 que  tendrás que escribirlas tú para las funciones encargadas de  _procesar_,
-_filtrar_ y _ordenar_ la data, así como _calcular_ estadísticas.
+_filtrar_ y _ordenar_ la allPokemon, así como _calcular_ estadísticas.
 
 Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
 (_sentencias_), _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
-(_ramas_) del archivo `src/data.js` que contenga tus funciones y está detallado
-en la sección de [Consideraciones técnicas](#srcdatajs).
+(_ramas_) del archivo `src/allPokemon.js` que contenga tus funciones y está detallado
+en la sección de [Consideraciones técnicas](#srcallPokemonjs).
 
 ## 6. Hacker edition
 
@@ -219,9 +219,9 @@ profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
 
 Features/características extra sugeridas:
 
-* En lugar de consumir la data estática brindada en este repositorio, puedes
-  consumir la data de forma dinámica, cargando un archivo JSON por medio de
-  `fetch`. La carpeta `src/data` contiene una versión `.js` y una `.json` de
+* En lugar de consumir la allPokemon estática brindada en este repositorio, puedes
+  consumir la allPokemon de forma dinámica, cargando un archivo JSON por medio de
+  `fetch`. La carpeta `src/allPokemon` contiene una versión `.js` y una `.json` de
   de cada set datos.
 * Agregarle a tu interfaz de usuario implementada visualizaciones gráficas. Para
   ello te recomendamos explorar librerías de gráficas como
@@ -248,7 +248,7 @@ como toda la configuración de dependencias:
 ├── README.md
 ├── package.json
 ├── src
-|  ├── data (según con qué data trabajes)
+|  ├── allPokemon (según con qué allPokemon trabajes)
 |  |  ├── lol
 |  |  |  ├── lol.js
 |  |  |  ├── lol.json
@@ -261,12 +261,12 @@ como toda la configuración de dependencias:
 |  |     ├── rickandmorty.js
 |  |     └── rickandmorty.json
 |  |     └── README.md
-|  ├── data.js
+|  ├── allPokemon.js
 |  ├── index.html
 |  ├── main.js
 |  └── style.css
 └── test
-   └── data.spec.js
+   └── allPokemon.spec.js
 
 directory: 6 file: 17
 ```
@@ -294,18 +294,18 @@ correspondiente.
 Por ejemplo, si "descomentamos" la siguiente línea:
 
 ```js
-// import data from './data/pokemon/pokemon.js';
+// import allPokemon from './allPokemon/pokemon/pokemon.js';
 ```
 
 La línea quedaría así:
 
 ```js
-import data from './data/pokemon/pokemon.js';
+import allPokemon from './allPokemon/pokemon/pokemon.js';
 ```
 
-Y ahora tendríamos la variable `data` disponible en el script `src/main.js`.
+Y ahora tendríamos la variable `allPokemon` disponible en el script `src/main.js`.
 
-### `src/data.js`
+### `src/allPokemon.js`
 
 El corazón de este proyecto es la manipulación de datos a través de arreglos
 y objetos.
@@ -313,19 +313,19 @@ y objetos.
 Te recomendamos que este archivo contenga toda la funcionalidad que corresponda
 a obtener, procesar y manipular datos (tus funciones). Por ejemplo:
 
-* `filterData(data, condition)`: esta función `filter` o filtrar recibiría la
-  data, y nos retornaría aquellos datos que sí cumplan con la condición.
+* `filterallPokemon(allPokemon, condition)`: esta función `filter` o filtrar recibiría la
+  allPokemon, y nos retornaría aquellos datos que sí cumplan con la condición.
 
-* `sortData(data, sortBy, sortOrder)`: esta función `sort` u ordenar
+* `sortallPokemon(allPokemon, sortBy, sortOrder)`: esta función `sort` u ordenar
   recibe tres parámetros.
-  El primer parámetro, `data`, nos entrega los datos.
+  El primer parámetro, `allPokemon`, nos entrega los datos.
   El segundo parámetro, `sortBy`, nos dice con respecto a cuál de los campos de
-  la data se quiere ordenar.
+  la allPokemon se quiere ordenar.
   El tercer parámetro, `sortOrder`, indica si se quiere ordenar de manera
   ascendente o descendente.
 
-* `computeStats(data)`: la función `compute` o calcular, nos permitirá hacer
-  cálculos estadísticos básicos para ser mostrados de acuerdo a la data
+* `computeStats(allPokemon)`: la función `compute` o calcular, nos permitirá hacer
+  cálculos estadísticos básicos para ser mostrados de acuerdo a la allPokemon
   proporcionada.
 
 Estos nombres de funciones y de parámetros son solamente referenciales, lo que
@@ -336,20 +336,20 @@ e independientes del DOM. Estas funciones serán después usadas desde el archiv
 `src/main.js`, al cargar la página, y cada vez que el usuario interactúe (click,
 filtrado, ordenado, ...).
 
-### `src/data`
+### `src/allPokemon`
 
 En esta carpeta están los datos de las diferentes fuentes. Encontrarás una
 carpeta por cada fuente, y dentro de cada carpeta dos archivos: uno con la
-extensión `.js` y otro `.json`. Ambos archivos contienen la misma data; la
+extensión `.js` y otro `.json`. Ambos archivos contienen la misma allPokemon; la
 diferencia es que el `.js` lo usaremos a través de una etiqueta `<script>`,
-mientras que el `.json` está ahí para opcionalmente cargar la data de forma
+mientras que el `.json` está ahí para opcionalmente cargar la allPokemon de forma
 asíncrona con [`fetch()`](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
 (ver sección de [_Parte Opcional_](#6-hacker-edition)).
 
-### `test/data.spec.js`
+### `test/allPokemon.spec.js`
 
 Tendrás también que completar las pruebas unitarias de las funciones
-implementadas en el archivo `data.js`.
+implementadas en el archivo `allPokemon.js`.
 
 ## 8. Pistas, tips y lecturas complementarias
 
@@ -433,7 +433,7 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
   Ojo que Cris no diferencia _Definición de terminado_ de _Criterios de
   Aceptación_ y nosotros sí lo haremos. Más detalles en la guía.
 * [Cómo dividir H.U.](https://www.youtube.com/watch?v=Ueq786iZ30I&t=341s)
-* [Guía para Data Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
+* [Guía para allPokemon Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
 
 ## 9. Checklist
 
@@ -453,6 +453,6 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 * [ ] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
 * [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
+* [ ] UI: Permite ordenar allPokemon por uno o más campos (asc y desc).
+* [ ] UI: Permite filtrar allPokemon en base a una condición.
 * [ ] UI: Es _responsive_.

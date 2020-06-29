@@ -18,7 +18,7 @@ ver la lista de personajes que aparecen en la serie, la cantidad de
 episodios, los diferentes lugares de origen, para tener mayor información de la
 serie.
 
-## Detalles de la data
+## Detalles de la allPokemon
 
 * Con este set de datos puedes obtener los siguientes datos de un personaje:
 

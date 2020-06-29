@@ -2,7 +2,7 @@ export default {
   type: "champion",
   format: "standAloneComplex",
   version: "6.24.1",
-  data: {
+  allPokemon: {
     Aatrox: {
       version: "6.24.1",
       id: "Aatrox",

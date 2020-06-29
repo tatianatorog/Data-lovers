@@ -1,4 +1,4 @@
-# Data Lovers, viaje extendido
+# allPokemon Lovers, viaje extendido
 
 ![Travel pic](https://assets-auto.rbl.ms/5fefc7fee587f0e4aca6794810f346d3c555463eed4e21eaa015d6fc9e6bcb5d)
 [Fuente](https://www.theodysseyonline.com/road-trips-worthwhile)
@@ -25,7 +25,7 @@ la [parte obligatoria](README.md#parte-obligatoria).
 Tienes estas opciones:
 
 2.1. Haz la "Parte Opcional" [(Hacker Edition)](README.md#parte-opcional-hacker-edition).
-Enfócate en los dos puntos principales: _cargar la data usando [`fetch`](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)_
+Enfócate en los dos puntos principales: _cargar la allPokemon usando [`fetch`](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)_
 y/o _agregar gráficas con [`Chart.js`](https://www.chartjs.org/)
 o [`Google Charts`](https://developers.google.com/chart/)_. Si ya hiciste esto,
 pasa a las siguientes opciones (obviamente).
@@ -57,7 +57,7 @@ interfaz).
   decida tu _Training Manager_.
 
 - Es responsabilidad de lxs _coaches_ y la _Training Manager_, después de las
-  entrevistas del final del proyecto original "Data Lovers", aconsejar y validar
+  entrevistas del final del proyecto original "allPokemon Lovers", aconsejar y validar
   qué opciones de todas las detalladas en este `README.md`, se adecúan más
   a cada estudiante.
 
@@ -72,8 +72,8 @@ git pull <repo-url> <branch>
 ```
 
 Por ejemplo, si el repo de tu cohort es
-`https://github.com/Laboratoria/lim-2018-11-bc-core-am-data-lovers.git`:
+`https://github.com/Laboratoria/lim-2018-11-bc-core-am-allPokemon-lovers.git`:
 
 ```sh
-git pull https://github.com/Laboratoria/lim-2018-11-bc-core-am-data-lovers.git master
+git pull https://github.com/Laboratoria/lim-2018-11-bc-core-am-allPokemon-lovers.git master
 ```
