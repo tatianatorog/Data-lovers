@@ -1,4 +1,4 @@
-# allPokemon Lovers
+# Pokepedia
 
 ## Índice
 
