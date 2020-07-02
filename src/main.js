@@ -1,44 +1,51 @@
 //import { example } from './allPokemon.js';
+//import data from './data/pokemon/pokemon.js';
+ 
+     window.onload 
 
-// function showPokemon(){
-//      fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/src/data/pokemon/pokemon.json')
-//      .then(res => res.json())
-//      .then(listOfPokemon => {
-//        const data = listOfPokemon.pokemon;
-//       card(data);
+     fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/src/data/pokemon/pokemon.json')
+    .then((res) => res.json())
+      .then((data) => {
+        let allData = data.pokemon;
+      createCard(allData);
        
+       });
+
+       function modal () {
+          let modalPopup = document.querySelectorAll(".popup");
+          modalPopup.target.style.visibility = 'visible';
+
+          };
+
+          const btnAboutMe = document.getElementById(`[${allData[i].id}]`)
+
+          btnAboutMe.addEventListener("click", modal );
+
+
+      
+
+       
+
+      
+          function createCard (allData) {
+          // function aboutMe (){ 
+          //      overlay.classList.add('active');
+          //      popup.classList.add('active');
+          // }  
      
-//       })
-//      }
-
-
-import data from './data/pokemon/pokemon.js';
-
-/*
-overlay = document.getElementById('overlay'),
-popup= document.getElementById('popup'),
-btnClosePopup= document.getElementById('btn-close-popup');*/
-
-let allData = data.pokemon;
-
-window.onload = function pokemon (allPokemon) {
-     // function aboutMe (){ 
-     //      overlay.classList.add('active');
-     //      popup.classList.add('active');
-     // }  
-     
-    
+               console.log(allData);
           let card = ''
          for ( let i = 0;  i < allData.length; i++) {
           
             card += `
-            <li class= card>
+            <li class="card" id="${allData[i].id}">
             <h2 class="name">${allData[i].name} ${allData[i].num}</h2>
             <img class ="image_pokemon" src="${allData[i].img}" alt="pokemon-image">
-            <button class="btn_aboutMe" id="btn_aboutMe">About me</button>
+            <button class="btn_aboutMe" btn-id="${allData[i].id}">About me</button>
+            </li>
             
-            <div class="overlay" id="overlay" style="display:none">
-             <div class="popup" id="popup">
+            
+             <div class="popup" modal-id="${allData[i].num}">
              <a href="#" id="btn-close-popup" class="btn-close-popup"><i class="fas fa-times"></i> </a>
              <img src="${allData[i].img}" alt="pokemon_card_popup">
              <h2 class="name_popup">${allData[i].name} ${allData[i].num}</h2>
@@ -54,25 +61,37 @@ window.onload = function pokemon (allPokemon) {
              </div>
              </div>
 
-            `          
-          }
+            `      
+            
+   
+          };
        document.getElementById('listOfPokemon').innerHTML = card;
      };
+     
 
-     const eventModal = function () {
-          let modal = document.querySelectorAll(".overlay");
+
+
+
+
+
+
+          //const btnAboutMe = document.querySelector("")
+    
+          /*function createModal () {
+          let modal = document.querySelectorAll("#card");
           modal.forEach(carta => {
                let modalPopup = carta.querySelector(".popup")
                const showInfo = () => {
                     modalPopup.style.display = "block";
                }
 
-               let btnAboutMe = document.querySelectorAll(".btn_aboutMe");
-               carta.addEventListener("click", showInfo());
           })
+     }*
 
-
-     }
+     /*
+overlay = document.getElementById('overlay'),
+popup= document.getElementById('popup'),
+btnClosePopup= document.getElementById('btn-close-popup');*/
      
 
 
@@ -150,13 +169,3 @@ window.onload = function pokemon (allPokemon) {
             });*/
 
            
-
-     
-
-
-
-
-
-            
-           
-

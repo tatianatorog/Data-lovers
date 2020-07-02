@@ -128,9 +128,7 @@ body {
 
  }
 
- /*.overlay.active {
-     visibility: visible;
- }*/
+ 
 
  .popup{
      background: rgb(147, 217, 245);;
@@ -145,6 +143,10 @@ body {
      transform: scale(0.7);
 	 opacity: 0; */
 }
+
+.popup.active {
+     visibility: visible;
+ }
 
  .popup .btn-close-popup {
 	font-size: 16px;
