@@ -1,3 +1,5 @@
+<p align="center"> <img src="https://github.com/paulalenisb/BOG001-data-lovers/blob/version2/src/images/web_header.png?raw=true" width="1000"> </p>
+
 # Pokepedia
 
 ## Índice
