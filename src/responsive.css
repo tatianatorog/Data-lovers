@@ -1,0 +1,28 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    header {
+        background-image: url("images/tablet_header.png");
+        height: 250px;
+        width: 100%;     
+           
+    }
+
+    .nav{
+        
+        margin-top: 30%;
+        
+        
+    }
+    body 
+
+    .card {
+        width: 200px;
+        height: 250px;
+        font-size: 12px;
+        border-radius: 15px;
+        margin: 10px;
+        padding-bottom: 5px;
+        box-shadow: 11px 9px 23px -12px rgba(0,0,0,0.38);
+    }
+}
+

@@ -1,64 +1,36 @@
 //import { example } from './allPokemon.js';
 //import data from './data/pokemon/pokemon.js';
- 
+
+// import {
+  
+//   orderNames,
+// } from './data.js';
+
+
+
+
 window.onload 
+
+
+
+// import {
+  
+//   orderNames,
+  
+// } from './data.js';
+
 
      fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/src/data/pokemon/pokemon.json')
           .then((res) => res.json())
           .then((data) => {
-          createCard(data.pokemon);
+
+          const allData= data.pokemon
+         createCard(allData);
+         
        
-     });
-
-     
-
-     function modal (id) {
-          let overlay = document.getElementById("overlay" + id);
-          let modalPopup = document.getElementById("modal" + id);
-          modalPopup.style.display = 'block';
-          overlay.style.display = 'block';
-          
-          console.log(modalPopup)
-     };
-      
-       function closeModal (id) {
-          let overlay = document.getElementById("overlay" + id);
-          let modalPopup = document.getElementById("modal" + id);
-          modalPopup.style.display = 'none';
-          overlay.style.display = 'none';
-          
-       }
-     
-      
-     function compare( a, b ) {
-          if ( a.name< b.name ){
-            return -1;
-          }
-          if ( a.name > b.name ){
-            return 1;
-          }
-          return 0;
-        };
-
-
-     function order(name) {
-          let cardPokemon = document.getElementById("namePokemon" + name);
-          // return cardPokemon.sort( compare );
-
-          console.log(cardPokemon)   
-       }
-        
-       console.log(order())
-          
-          const selectOrderAz = document.getElementById('order_az')
-         
-              selectOrderAz.addEventListener("click", order)
-              
-     
-      
      function createCard (allData) {
+      let card = '';
          
-          let card = ''
           for ( let i = 0;  i < allData.length; i++) {
               
             card += `
@@ -87,29 +59,64 @@ window.onload
              </div>
 
             ` 
-            
-            
+ 
 
           };
-          let modalPopup = document.getElementById(`modal${id}`);
-            let view = card.modalPopup.map((allData) => {
-                  let candyCount = character.candy_count;
-                  if(candyCount === undefined){
-                      candyCount = 0;
-                   };
-           
-         );
-     
+          
           document.getElementById('listOfPokemon').innerHTML = card;
-            
-          };
+        
+        }
+      
+      
+        function getOrderCards(){
           
+        const valueOption = selectOrderAz.value
+        createCard(orderNames(allData, valueOption));
+        }
+
+         const selectOrderAz = document.querySelector('#OrdenAlfabetico');
+        selectOrderAz.addEventListener('change',getOrderCards)
+      
+    })
+
+
+
+    const orderNames = (data, option) => {
+      const orderAZ = data.sort(function(a, b){
+        if (a.name < b.name) {
+          return -1
+        }
+        if (a.name > b.name) {
+          return 1
+        }
+      })
           
-     
+     if (option === 'A-Z') {
+       return orderAZ;
+     }
+     if (option === 'Z-A') {
+       return orderAZ.reverse();
+     }
+     return orderAZ;
+    };
 
 
        
+        function modal (id) {
+          let overlay = document.getElementById("overlay" + id);
+          let modalPopup = document.getElementById("modal" + id);
+          modalPopup.style.display = 'block';
+          overlay.style.display = 'block';
+          
+          console.log(modalPopup)
+     };
       
-     
+       function closeModal (id) {
+          let overlay = document.getElementById("overlay" + id);
+          let modalPopup = document.getElementById("modal" + id);
+          modalPopup.style.display = 'none';
+          overlay.style.display = 'none';
+          
+       }
 
-   
+
