@@ -66,18 +66,35 @@ window.onload
           document.getElementById('listOfPokemon').innerHTML = card;
         
         }
-      
+        
+        let card = "";
       
         function getOrderCards(){
-          
-        const valueOption = selectOrderAz.value
+        const valueOption = selectOrderAz.name
+        const valueOptions = selectOrderZa.name
         createCard(orderNames(allData, valueOption));
+        createCard(orderNames(allData, valueOptions));
         }
 
-         const selectOrderAz = document.querySelector('#sortNames');
-        selectOrderAz.addEventListener('change',getOrderCards)
+         let selectOrderAz = document.querySelector('#orderAZ');
+         let selectOrderZa = document.querySelector('#orderZA');
+         selectOrderAz.addEventListener('click',getOrderCards)
+         selectOrderZa.addEventListener('click',getOrderCards)
       
     })
+
+
+
+  //   function getOrderCards(){
+          
+  //     const valueOption = selectOrderAz.value
+  //     createCard(orderNames(allData, valueOption));
+  //     }
+
+  //      let selectOrderAz = document.querySelector('#orderZA');
+  //     selectOrderAz.addEventListener('click',getOrderCards)
+    
+  // })
 
 
 
