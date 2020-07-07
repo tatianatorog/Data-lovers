@@ -74,7 +74,7 @@ window.onload
         createCard(orderNames(allData, valueOption));
         }
 
-         const selectOrderAz = document.querySelector('#OrdenAlfabetico');
+         const selectOrderAz = document.querySelector('#sortNames');
         selectOrderAz.addEventListener('change',getOrderCards)
       
     })
@@ -86,7 +86,7 @@ window.onload
         if (a.name < b.name) {
           return -1
         }
-        if (a.name > b.name) {
+        if (a.name < b.name) {
           return 1
         }
       })

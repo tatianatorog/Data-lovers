@@ -9,10 +9,9 @@
 
     .nav{
         
-        margin-top: 30%;
-        
-        
+        margin-top: 20%;
     }
+
     body 
 
     .card {
@@ -24,5 +23,11 @@
         padding-bottom: 5px;
         box-shadow: 11px 9px 23px -12px rgba(0,0,0,0.38);
     }
+
+    #listOfPokemon {
+        margin-top: 300px;
+    }
+
 }
+
 
