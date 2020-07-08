@@ -13,11 +13,11 @@ window.onload
 
 
 
-// import {
+import {
   
-//   orderNames,
+  orderNames,
   
-// } from './data.js';
+} from './data.js';
 
 
      fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/src/data/pokemon/pokemon.json')
@@ -67,58 +67,50 @@ window.onload
         
         }
         
-        let card = "";
       
-        function getOrderCards(){
-        const valueOption = selectOrderAz.name
-        const valueOptions = selectOrderZa.name
-        createCard(orderNames(allData, valueOption));
-        createCard(orderNames(allData, valueOptions));
-        }
+        function getOrderCardsAz(){
+        const stringAz = selectOrderAz.textContent
+        createCard(orderNames(allData, stringAz ));
+        };
 
-         let selectOrderAz = document.querySelector('#orderAZ');
-         let selectOrderZa = document.querySelector('#orderZA');
-         selectOrderAz.addEventListener('click',getOrderCards)
-         selectOrderZa.addEventListener('click',getOrderCards)
+        function getOrderCardsZa(){
+          const stringZa = selectOrderZa.textContent
+          createCard(orderNames(allData, stringZa));
+          };
+
+
+         let selectOrderAz = document.querySelector('#orderAz');
+         let selectOrderZa = document.querySelector('#orderZa');
+         selectOrderAz.addEventListener('click',getOrderCardsAz)
+         selectOrderZa.addEventListener('click',getOrderCardsZa)
+       
       
     })
 
 
 
-  //   function getOrderCards(){
+    // const orderNames = (data, option) => {
+    //   const orderAZ = data.sort(function(a, b){
+    //     if (a.name < b.name) {
+    //       return -1
+    //     }
+    //     if (a.name < b.name) {
+    //       return 1
+    //     }
+    //   })
           
-  //     const valueOption = selectOrderAz.value
-  //     createCard(orderNames(allData, valueOption));
-  //     }
-
-  //      let selectOrderAz = document.querySelector('#orderZA');
-  //     selectOrderAz.addEventListener('click',getOrderCards)
-    
-  // })
-
-
-
-    const orderNames = (data, option) => {
-      const orderAZ = data.sort(function(a, b){
-        if (a.name < b.name) {
-          return -1
-        }
-        if (a.name < b.name) {
-          return 1
-        }
-      })
-          
-     if (option === 'A-Z') {
-       return orderAZ;
-     }
-     if (option === 'Z-A') {
-       return orderAZ.reverse();
-     }
-     return orderAZ;
-    };
+    //  if (option === 'A-Z') {
+    //    return orderAZ;
+    //  }
+    //  if (option === 'Z-A') {
+    //    return orderAZ.reverse();
+    //  }
+    //  return orderAZ;
+    // };
 
 
-       
+       window.modal = modal;
+
         function modal (id) {
           let overlay = document.getElementById("overlay" + id);
           let modalPopup = document.getElementById("modal" + id);
@@ -128,6 +120,8 @@ window.onload
           console.log(modalPopup)
      };
       
+     window.closeModal = closeModal;
+
        function closeModal (id) {
           let overlay = document.getElementById("overlay" + id);
           let modalPopup = document.getElementById("modal" + id);

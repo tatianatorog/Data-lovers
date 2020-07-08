@@ -1,11 +1,11 @@
 // estas funciones son de ejemplo
 
-export const orderNames = (data) => {
+export const orderNames = (data, option) => {
   const orderAZ = data.sort(function(a, b){
     if (a.name < b.name) {
       return -1
     }
-    if (a.name > b.name) {
+    if (a.name < b.name) {
       return 1
     }
   })
@@ -16,7 +16,6 @@ export const orderNames = (data) => {
  if (option === 'Z-A') {
    return orderAZ.reverse();
  }
- return orderAZ;
 };
 
 export const anotherExample = () => {
