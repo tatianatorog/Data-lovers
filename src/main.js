@@ -16,6 +16,7 @@ window.onload
 import {
   
   orderNames,
+  filterType,
   
 } from './data.js';
 
@@ -27,12 +28,20 @@ import {
           const allData= data.pokemon
          createCard(allData);
          
+
+        
+      
+
+         
        
      function createCard (allData) {
       let card = '';
          
           for ( let i = 0;  i < allData.length; i++) {
               
+            if (allData[i].candy_count === undefined) {
+              allData[i].candy_count = 'I do not eat candies'
+                  }
             card += `
             <li class="card" id="cards${allData[i].id}">
             <h2 id="namePokemon${allData[i].name}" class="name">${allData[i].name}   ${allData[i].num}</h2>
@@ -46,9 +55,9 @@ import {
              <img src="${allData[i].img}" alt="pokemon_card_popup">
              <h2 class="name_popup">${allData[i].name} ${allData[i].num}</h2>
              <div class="blue_bar"> </div>
-             <p class="type">Type: ${allData[i].type}</p>
+             <p class="type" id="${allData[i].type}">Type: ${allData[i].type}</p>
              <div class="container2_popup">
-             <p class="pokemon_info"> <strong> Weaknesses:</strong> ${allData[i].weaknesses}</p>
+             <p class="pokemon_info"> <strong> Weaknesses:</strong> <span id="${allData[i].weaknesses}">${allData[i].weaknesses}</span> </p>
              <p class="pokemon_info"><strong>Candy:</strong> ${allData[i].candy}</p>
              <p class="pokemon_info"><strong>Candy Count: </strong>${allData[i].candy_count}</p>
              <p class="pokemon_info"><strong>Spawn Chance:</strong> ${allData[i].spawn_chance}</p>
@@ -61,52 +70,56 @@ import {
             ` 
  
 
-          };
+          }
+          // .join(", ")
           
-          document.getElementById('listOfPokemon').innerHTML = card;
-        
+          document.getElementById('listOfPokemon').innerHTML = card
+
+          
+
         }
+      
+        // function getOrderCardsAz(){
+        // const stringAz = selectOrderAz.textContent
+        // createCard(orderNames(allData, stringAz ));
+        // };
+
+       const getOrderCards =(e)=>{
+          const eventBtnSort= e.target.textContent
+    
+          createCard(orderNames(allData, eventBtnSort ))
+          
+        }
+
+
+      
+        let menuSort = document.querySelector('.menuSort');
+         menuSort.addEventListener('click',getOrderCards)
+
+
+
+
+
+         let typePokemon = document.querySelector('.menuType')
+         const onclick = (e)=>{
+           const eventBtnFilter= e.target.textContent
+           createCard(filterType(allData, eventBtnFilter))
+          typePokemon.style.display = 'none';
+
+         }
         
+
+          typePokemon.addEventListener('click', onclick)
+         console.log(filterType(allData, "Poison"))
       
-        function getOrderCardsAz(){
-        const stringAz = selectOrderAz.textContent
-        createCard(orderNames(allData, stringAz ));
-        };
-
-        function getOrderCardsZa(){
-          const stringZa = selectOrderZa.textContent
-          createCard(orderNames(allData, stringZa));
-          };
-
-
-         let selectOrderAz = document.querySelector('#orderAz');
-         let selectOrderZa = document.querySelector('#orderZa');
-         selectOrderAz.addEventListener('click',getOrderCardsAz)
-         selectOrderZa.addEventListener('click',getOrderCardsZa)
        
-      
+    
+
     })
 
+    
 
-
-    // const orderNames = (data, option) => {
-    //   const orderAZ = data.sort(function(a, b){
-    //     if (a.name < b.name) {
-    //       return -1
-    //     }
-    //     if (a.name < b.name) {
-    //       return 1
-    //     }
-    //   })
-          
-    //  if (option === 'A-Z') {
-    //    return orderAZ;
-    //  }
-    //  if (option === 'Z-A') {
-    //    return orderAZ.reverse();
-    //  }
-    //  return orderAZ;
-    // };
+    
 
 
        window.modal = modal;
@@ -118,7 +131,7 @@ import {
           overlay.style.display = 'block';
           
           console.log(modalPopup)
-     };
+     }
       
      window.closeModal = closeModal;
 
@@ -131,3 +144,11 @@ import {
        }
 
 
+      
+      
+   
+     
+
+
+        
+         

@@ -1,4 +1,4 @@
-import {orderNames} from '../src/data.js';
+import {orderNames, filterType} from '../src/data.js';
 
 
 describe('sort data alphabetically', () => {
@@ -41,7 +41,25 @@ describe('sort data alphabetically', () => {
   })
  });
  
+ describe('Filter by type', () => {
+  it('Should be a function', () => {
+    expect(typeof filterType).toBe('function');
+  });
 
+  it('should filter by type', () => {
+    const types = [
+      { type: ['Grass', 'Poison'] },
+      { type: ['Fire'] },
+      { type: ['Fire', 'Flying'] },
+    ];
+    const userInput = 'Fire';
+    const output = [
+      { type: ['Fire'] },
+      { type: ['Fire', 'Flying'] },
+    ];
+    expect(filterType(types, userInput)).toEqual(output);
+  });
+});
 
 // describe('anotherExample', () => {
 //   it('is a function', () => {

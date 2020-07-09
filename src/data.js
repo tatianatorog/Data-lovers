@@ -18,27 +18,15 @@ export const orderNames = (data, option) => {
  }
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
-
-
-
-// function orderNames  (datosPokemon, option) {
-          
-//   const ordenarDeAZ = datosPokemon.sort(function(a, b){
-//      if (a.name < b.name) {
-//        return 1
-//      }
-//      if (a.name < b.name) {
-//        return -1
-//      }
-       
-//   if (option === 'A-Z') {
-//     return ordenarDeAZ;
-//   }
-//   if (option === 'Z-A') {
-//     return ordenarDeAZ.reverse();
-//   }
-//   return ordenarDeAZ;
+// export const anotherExample = () => {
+//   return 'OMG';
 // };
+
+
+
+
+ export const filterType = (data, option) => {
+          const newArray = data.filter((el) => el.type.includes(option));
+          return newArray;
+ }
+
