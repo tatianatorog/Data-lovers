@@ -81,7 +81,7 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     const getFilterCards = (e)=>{
       const eventBtnFilter= e.target.textContent
       createCard(filterType(allData, eventBtnFilter))
-      typePokemon.style.display = 'none';
+      // typePokemon.style.display = 'none';
     }
 
     let typePokemon = document.querySelector('.menuType')    
