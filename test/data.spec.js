@@ -40,6 +40,8 @@ describe('sort data alphabetically', () => {
       expect(orderNames(names,optionUsers)).toStrictEqual(sortNames);    
   })
  });
+
+ 
  
  describe('Filter by type', () => {
   it('Should be a function', () => {
