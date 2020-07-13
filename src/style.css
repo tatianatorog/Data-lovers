@@ -20,6 +20,24 @@ body {
     box-sizing: border-box;   
  }
  
+ #bigContainerResult{
+    position: fixed;
+    top: 42vw;
+    padding: 0px 15px;
+    text-align: center;
+    background: #f4f4f4;
+    font-size: 14px;
+    width:100%;
+    height: 30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    display:none;
+}
+
+
+
  .navegation{
 	width: 100%;
     margin-top: 30vw;
@@ -28,7 +46,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .navegation ul{
@@ -137,7 +155,7 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 50vw;
+    margin-top: 55vw;
     margin-right: 10px ;
     margin-left: 10px ;
     padding: 0px;
@@ -268,7 +286,9 @@ body {
 }
 
 
-p#Grass,Poison.type {
 
-    background-color: #9bcc50;
-}
+    
+  
+   
+
+    

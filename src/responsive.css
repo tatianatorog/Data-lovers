@@ -7,7 +7,7 @@
     }
 
     #listOfPokemon {
-        margin-top: 42vw ;
+        margin-top: 50vw ;
     }
 }
 
@@ -20,6 +20,17 @@
         width: 100%; 
      }
 
+     .navegation{
+        font-size: 20px;
+     }
+
+     
+
+     #bigContainerResult {
+      
+        top: 37vw;
+        font-size:18px;
+     }
 
     .btn_aboutMe {
         
@@ -65,7 +76,7 @@
     
     header {
         background-image: url("images/web_header01.png");
-        height:18vh;
+        height:14vw;
         width: 100vw;   
         box-sizing: border-box;  
     }
@@ -88,7 +99,7 @@
         margin-top: 11vw;
 }
     .navegation{
-        margin-top: 12vw;
+        margin-top: 14vw;
     }
 
     .popup{
@@ -100,20 +111,22 @@
         margin-left: 5vw;
         width: 30vw
     }
+    #bigContainerResult {
+        top: 20vw;
+    }
 }
 
 @media (min-width: 1120px) {
     
     header {
         background-image: url("images/web_header01.png");
-        height:18vh;
         width: 100vw;   
         box-sizing: border-box;  
     }
 
-    .navegation{
-        margin-top: 12vw;
-    }
+   
+
+  
 }
     
 
@@ -164,5 +177,10 @@
     
     .menuSort{
         margin-top:0.4vh;
+    }
+
+    #bigContainerResult {
+        top: 17vw;
+        font-size: 20px;
     }
 }

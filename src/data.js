@@ -32,16 +32,21 @@ export const orderNames = (data, option) => {
 
 
 
- let computeType = (data,option) => {
+//  export const computeType = (data) => {
 
-   const newComputeType = data.reduce((contador, data) => {
-    if (data.option === "Grass") {
-      return contador + 1;
-    } else {
-     return contador;
-    }
+//   const newComputeType = data.reduce((contador, option) => {
+//     if (option. === "Grass") {
+//       return contador + 1;
+//     } else {
+//      return contador;
+//     }
 
-   }, 0);
+//    }, 0);
+
+//   }
 
 
- console.log(newComputeType);
+//   const lengthType = (type) => {
+//     let result = parseInt(type.length);
+//     return result; 
+// }

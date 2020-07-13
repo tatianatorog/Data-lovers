@@ -12,6 +12,7 @@ import {
   
   orderNames,
   filterType,
+  // computeType,
   
 } from './data.js';
 
@@ -92,7 +93,13 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
 
     const getFilterCards = (e)=>{
       const eventBtnFilter= e.target.textContent
-      createCard(filterType(allData, eventBtnFilter))
+      let filtroP = filterType(allData, eventBtnFilter)
+      createCard(filtroP)
+      let calculo = lengthType(filtroP)
+      let resultType = document.getElementById("bigContainerResult")
+      resultType.style.display = 'flex';
+      resultType.innerHTML = `${calculo} of the Pokemons at the Kanto region are ${eventBtnFilter}` 
+      
       // typePokemon.style.display = 'none';
     }
 
@@ -100,7 +107,24 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     typePokemon.addEventListener('click', getFilterCards)
     // console.log(filterType(allData, "Poison"))
 
-  
+    const lengthType = (type) => {
+      let result =type.length
+      return result; 
+  }
+
+
+
+
+ const newComputeType = allData.reduce((contador, option) => {
+  if (option === "Grass") {
+    return contador + 1;
+  } else {
+   return contador;
+  }
+
+ }, 0);
+
+ console.log( newComputeType)
 
 })
 
