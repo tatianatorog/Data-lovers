@@ -70,7 +70,9 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
                 </div>
 
                 ` 
-                console.log(allData[i].weaknesses);
+                // console.log(allData[i].weaknesses);
+
+                
  
 
           }
@@ -97,6 +99,8 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     let typePokemon = document.querySelector('.menuType')    
     typePokemon.addEventListener('click', getFilterCards)
     // console.log(filterType(allData, "Poison"))
+
+  
 
 })
 

@@ -30,3 +30,18 @@ export const orderNames = (data, option) => {
           return newFilterType;
  }
 
+
+
+ let computeType = (data,option) => {
+
+   const newComputeType = data.reduce((contador, data) => {
+    if (data.option === "Grass") {
+      return contador + 1;
+    } else {
+     return contador;
+    }
+
+   }, 0);
+
+
+ console.log(newComputeType);
