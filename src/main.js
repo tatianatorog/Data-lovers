@@ -58,7 +58,7 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
                 <img src="${allData[i].img}" alt="pokemon_card_popup">
                 <h2 class="name_popup">${allData[i].name} ${allData[i].num}</h2>
                 <div class="blue_bar"> </div>
-                <p class="type" id="${allData[i].type}">Type: ${typeSection}</p>
+                <div class="type" id="${allData[i].type}">Type: ${typeSection}</div>
                 <div class="container2_popup">
                 <p class="pokemon_info"> <strong> Weaknesses: </strong>  ${allData[i].weaknesses.join(", ")} </p>
                 <p class="pokemon_info"><strong>Candy:</strong> ${allData[i].candy}</p>
@@ -87,7 +87,9 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
       const eventBtnSort= e.target.textContent
       createCard(orderNames(allData, eventBtnSort))
     }
-      
+
+
+
     let menuSort = document.querySelector('.menuSort');
     menuSort.addEventListener('click',getOrderCards) 
 
@@ -103,12 +105,32 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
       // typePokemon.style.display = 'none';
     }
 
+
+
     let typePokemon = document.querySelector('.menuType')    
     typePokemon.addEventListener('click', getFilterCards)
-    // console.log(filterType(allData, "Poison"))
+   
+
+    // const showType = () => {
+    //   typePokemon.style.display = "grid";
+    // };
+
+    // let typeLink = document.querySelector("#typeLink");
+    // typeLink.addEventListener("click", showType);
+
+    // const showOrderNames = () => {
+    //   menuSort.style.display = "block"
+    // };
+
+    // let sortNames = document.querySelector("#sortNames");
+    // sortNames.addEventListener("click", showOrderNames);
+
+
+
+
 
     const lengthType = (type) => {
-      let result =type.length
+      let result = type.length
       return result; 
   }
 
@@ -124,7 +146,7 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
 
  }, 0);
 
- console.log( newComputeType)
+ console.log(newComputeType)
 
 })
 
@@ -149,19 +171,33 @@ function closeModal (id) {
 }
 
 
+
+// function getColor (type) {
+//   switch (type) {
+//     case type == "Grass":
+//      console.log("Soy grass");
+//       break;
+//     case type == "Poison":
+//       `<div id="Poison"></div>`;
+//       break;
+//     default:
+//       console.log("Soy tipo" + type)
+
+//   };
+
+// }
+ 
+
 function getColor (type) {
   if (type === "Grass") {
-    return "green"
+    return `<div id="green"></div>`
   }
- 
+
   return "blue"
-  
 
 }
+
+
+// `<div id="Grass"></div>`
+
       
-   
-     
-
-
-        
-         

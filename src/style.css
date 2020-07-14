@@ -34,6 +34,7 @@ body {
     justify-content: center;
     color: gray;
     display:none;
+    z-index: -9;
 }
 
 
@@ -71,7 +72,7 @@ body {
 
 .menu li a:hover{
 	color: #48688ad3;
-    transition: all .3s;
+    /* transition: all .3s; */
     background-color: wheat;
 }
 
@@ -79,13 +80,13 @@ body {
 	position: absolute;
 	background: #48688ad3;
 	width: 250%;
-	visibility: hidden;
+	/* visibility: hidden; */
     opacity: 0;
     color: white;
     transition: opacity 1.5s;
     margin-top: -0.6vh;
     padding: 0px;
-    display: grid;
+    display: none;
     grid-template-columns: 50% 50%;
     
 }
@@ -106,17 +107,17 @@ body {
     
 }
 
-.menuType li a:target{
+/* .menuType li a:target{
     display: block;
     padding: 10px;
-}
+} */
 
 
 .menuSort {
     position: absolute;
 	background:#48688ad3;
 	width: 100%;
-	visibility: hidden;
+	/* visibility: hidden; */
 	opacity: 0;
     transition: opacity 1.5s;
     margin-top: -0.6vh;
@@ -135,18 +136,18 @@ body {
     color: white;
 }
 
-.menuSort li a:target{
+/* .menuSort li a:target{
     display: block;
-}
+} */
 
 
 .menu li:hover .menuSort{
-	visibility: visible;
+	display: block;
 	opacity: 1;
 }
 
 .menu li:hover .menuType{
-	visibility: visible;
+	display: block;
 	opacity: 1;
 }
 
@@ -159,6 +160,7 @@ body {
     margin-right: 10px ;
     margin-left: 10px ;
     padding: 0px;
+    
 }
 
 .card {
@@ -172,6 +174,7 @@ body {
     text-align: center;
     padding-bottom: 5px;
     box-shadow: 11px 9px 23px -12px rgba(0,0,0,0.38);
+    z-index: -10;
 }
 
 .name {
@@ -285,6 +288,19 @@ body {
     word-break: break-all;
 }
 
+#Grass{
+    width: 50px;
+     height: 50px;;
+     border-radius: 50%;
+     background: #5cb85c;
+}
+
+#Poison{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 30px 10px 0 #d9534f;
+}
 
 
     
