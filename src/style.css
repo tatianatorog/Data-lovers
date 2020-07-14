@@ -19,7 +19,6 @@ body {
     top: 0;
     box-sizing: border-box;   
  }
- 
  #bigContainerResult{
     position: fixed;
     top: 42vw;
@@ -35,7 +34,6 @@ body {
     color: gray;
     display:none;
 }
-
 
 
  .navegation{
@@ -286,9 +284,7 @@ body {
 }
 
 
+p#Grass,Poison.type {
 
-    
-  
-   
-
-    
+    background-color: #9bcc50;
+}
