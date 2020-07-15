@@ -1,3 +1,7 @@
+@media (min-width: 360px) {
+    
+} 
+
 @media (min-width: 400px) {
     
     header {
@@ -20,9 +24,6 @@
         width: 100%; 
      }
 
-     .navegation{
-        font-size: 20px;
-     }
 
      #bigContainerResult {
         top: 39vw;
@@ -50,17 +51,17 @@
         margin-top: 45vw ;
     }
 
-    .menuType{
+    /* .menuType{
         margin-top:0vh;
     }
 
     .menuSort{
         margin-top:0vh;
-    }
+    } */
 
     .popup{
         /* margin: 7rem; */
-        width: 60vw;
+        width: 50vw;
     }
 
     .white_bar{
@@ -89,15 +90,6 @@
         margin-top: 23vw ;
         padding-left: 5vw;
         padding-right: 5vw;
-    }
-
-    .nav{
-        margin: auto;
-        margin-top: 11vw;
-}
-    .navegation{
-        margin-top: 14vw;
-        height: 6vw;
     }
 
     .popup{
@@ -145,16 +137,6 @@
         padding-right: 5vw;
     }
 
-    .nav{
-        margin: auto;
-        margin-top: 11vw;
-    }
-    
-    .navegation{
-        margin-top: 12vw;
-        height:7vh;
-    }
-
     .white_bar{
         margin-left: 5vw;
         width: 20vw;
@@ -166,14 +148,14 @@
         /* justify-content: center; */
     }
 
-    .menuType{
+    /* .menuType{
         margin-top:0.4vh;
     
     }
     
     .menuSort{
         margin-top:0.4vh;
-    }
+    } */
 
     #bigContainerResult {
         top: 18vw;

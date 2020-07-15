@@ -31,9 +31,12 @@ export const orderNames = (data, option) => {
  }
 
  export const filterName = (data, pokemon) => {
-  const newArrayname = data.filter((object) => object.name.toLowerCase().includes(pokemon));
-  return newArrayname;
-}
+  const newArrayname = data.filter((object) => object.name.toLowerCase().startsWith(pokemon.toLowerCase()));
+    
+    return newArrayname;
+  
+  }
+
 
 
 //  export const computeType = (data) => {

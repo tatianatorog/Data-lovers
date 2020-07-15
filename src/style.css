@@ -19,6 +19,203 @@ body {
     top: 0;
     box-sizing: border-box;   
  }
+
+ .menu_bar {
+	display:block;
+}
+
+header {
+	width: 100%;
+}
+
+header nav {
+	background:#023859;
+	z-index:1000;
+	max-width: 1000px;
+	width:95%;
+	margin:20px auto;
+}
+
+header nav ul {
+	list-style:none;
+}
+
+header nav ul li {
+	display:inline-block;
+	position: relative;
+}
+
+header nav ul li:hover {
+	background:#E6344A;
+}
+
+header nav ul li a {
+	color:#fff;
+	display:block;
+	text-decoration:none;
+	padding: 20px;
+}
+
+header nav ul li a span {
+	margin-right:10px;
+}
+
+/* header nav ul li:hover .menuType .menuSort {
+	display:block;
+} */
+
+.menuType{
+    display: none;
+    grid-template-columns: 50% 50%;
+
+}
+
+header nav ul li .menuType {
+	/* display: none; */
+	background:#011826;
+	position: absolute;
+	width: 150%;
+	z-index:1000;
+}
+
+header nav ul li .menuType li {
+	/* display: none; */
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+/* header nav ul li .menuType li a {
+	display: none;
+} */
+
+header nav ul li .menuType li a span {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right:0;
+	margin-left:10px;
+}
+
+header nav ul li .menuSort li {
+	display:block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+header nav ul li .menuSort li a {
+	display: block;
+}
+
+header nav ul li .menuSort li a span {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right:0;
+	margin-left:10px;
+}
+
+header nav ul li #caret  {
+	position: relative;
+	top:3px;
+	margin-left:10px;
+	margin-right:0px;
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		padding-top:80px;
+	}
+
+	.menu_bar {
+		display:block;
+		width:100%;
+		position: fixed;
+		top:0;
+		background:#E6344A;
+	}
+    
+    .menu_bar .bt-menu{
+		display: block;
+		padding: 20px;
+		color: #fff;
+		overflow: hidden;
+		font-size: 25px;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	.menu_bar span {
+		float: right;
+		font-size: 40px;
+    }
+    
+
+	header nav {
+		width: 80%;
+		height: calc(100% - 80px);
+		position: fixed;
+		margin: 0;
+        overflow: scroll;
+        display: none;
+    }
+    
+
+	header nav ul li {
+		display: block;
+		border-bottom:1px solid rgba(255,255,255,.5);
+	}
+
+	header nav ul li a {
+		display: block;
+    }
+    
+    .menuType{
+        display: none;
+
+    }
+
+	/* header nav ul li:hover .menuType{
+		display: none;
+	} */
+
+	header nav ul li .menuType{
+		width: 100%;
+		position: relative;
+	}
+
+	header nav ul li .menuType  li a {
+		margin-left:20px;
+    }
+
+    header nav ul li #caret {
+		float: right;
+	}
+    
+    .menuSort{
+        display: none;
+    }
+    /* header nav ul li:hover .menuSort {
+		display: block;
+	} */
+
+	header nav ul li .menuSort{
+		width: 100%;
+		position: relative;
+	}
+
+	header nav ul li .menuSort li a {
+		margin-left:20px;
+	}
+
+	
+}
+
+
+
+
+
+
+
  #bigContainerResult{
     position: fixed;
     top: 42vw;
@@ -36,49 +233,23 @@ body {
     z-index: -9;
 }
 
+#searchName {
+    background-color: #f4f4f4;
+    border: none;
+    border-radius: 3px;
+    height: 25px;
+    font-family: 'Roboto', sans-serif;
 
- .navegation{
-	width: 100%;
-    margin-top: 30vw;
-    background-color: rgba(242, 200,73, 1);
-    height:7vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-}
-
-.navegation ul{
-    list-style: none;  
-}
-
-.menu > li{
-	position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.menu > li > a{
-	display: block;
-	padding: 15px 20px;
-	color: #353535;
-	font-family: 'Roboto', sans-serif;;
-    text-decoration: none;
-    
 }
 
 
-.menu li a:hover{
-	color: #48688ad3;
-    transition: all .3s;
-    background-color: wheat;
-}
 
-.menuType {
+
+
+/* .menuType {
 	position: absolute;
 	background: #48688ad3;
 	width: 250%;
-	/* visibility: hidden; */
     opacity: 0;
     color: white;
     transition: opacity 1.5s;
@@ -87,23 +258,21 @@ body {
     display: none;
     grid-template-columns: 50% 50%;
     
-}
+} */
 
-.menuType li{
+/* .menuType li{
     margin: 10px 0px 10px 0px;
 }
 
 .menuType li a{
-	/* display: block; */
+
     padding: 5px;
     padding-right: 15px;
     padding-left: 20px;
 	color: white;
 	font-family: 'Roboto', sans-serif;;
     text-decoration: none;
-   
-    
-}
+} */
 
 /* .menuType li a:target{
     display: block;
@@ -111,19 +280,18 @@ body {
 } */
 
 
-.menuSort {
+/* .menuSort {
     position: absolute;
 	background:#48688ad3;
 	width: 100%;
-	/* visibility: hidden; */
 	opacity: 0;
     transition: opacity 1.5s;
     margin-top: -0.6vh;
     padding: 0px;
     text-align: center;
-}
+} */
 
-.menuSort li{
+/* .menuSort li{
     margin: 10px 0px 10px 0px;
 
 }
@@ -148,7 +316,7 @@ body {
 .menu li:hover .menuType{
 	display: block;
 	opacity: 1;
-}
+} */
 
 
 #listOfPokemon {
@@ -204,7 +372,7 @@ body {
 }
 
 #footer {
-    background: #ffffff;
+    background: #f4f4f4;
     display: flex;
     justify-content: center;
     font-size: 12px;
@@ -231,7 +399,7 @@ body {
      background: rgb(147, 217, 245);;
      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
      border-radius: 10px;
-     font-family: 'Roboto', sans-serif;;
+     font-family: 'Roboto', sans-serif;
      padding: 20px;
      text-align: center;
      width: 75vw;
@@ -263,7 +431,7 @@ body {
 }
 
 .white_bar {
-    background: #ffffff;
+    background: #f4f4f4;
     border-radius: 5px;
     width: 45vw;
     height: 10px;
@@ -295,37 +463,3 @@ body {
 
 }
 
-/* #Grass{
-    /* width: 50px;
-     height: 50px;; */
-     /* background-image: url("images/type_grass.png");
-} */
-
-/* #Poison{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 30px 10px 0 #d9534f;
-} */ 
-
-/* #Fire{
-
-}
-#Fighting{
-
-}
-#Rock{}
-#Ground{}
-#Water{}
-#Psychic{}
-#Electric{}
-#Normal{}
-#Ice{}
-#Ghost{}
-#Dragon{}
-#Bug{} */
-
-p#Grass,Poison.type {
-
-    background-color: #9bcc50;
-}

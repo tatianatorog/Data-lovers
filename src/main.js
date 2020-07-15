@@ -106,25 +106,49 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
       // typePokemon.style.display = 'none';
     }
 
+    let menuContent = document.querySelector("#menuContent");
+    let menuBar = document.querySelector("#menuBar");
+   
+
+    const showMenu = () => {
+      menuContent.style.display = "block"
+    };
+
+    menuBar.addEventListener("click", showMenu);
 
 
-    let typePokemon = document.querySelector('.menuType')    
-    typePokemon.addEventListener('click', getFilterCards)
+    let menuType = document.querySelector('.menuType')    
+    menuType.addEventListener('click', getFilterCards)
    
 
     const showType = () => {
-      typePokemon.style.display = "grid";
+      menuType.style.display = "grid";
     };
 
-    let typeLink = document.querySelector("#typeLink");
-    typeLink.addEventListener("click", showType);
+    const hideType = () => {
+      menuType.style.display = "none";
+    };
 
+
+    let subMenu= document.querySelector(".submenu");
+
+    subMenu.addEventListener("click", showType);
+
+    subMenu.addEventListener("mouseleave", hideType)
+
+    
+    let subMenuSort = document.querySelector(".submenuSort"); 
     const showOrderNames = () => {
       menuSort.style.display = "block"
     };
 
-    let sortNames = document.querySelector("#sortNames");
-    sortNames.addEventListener("click", showOrderNames);
+    const hideOrderNames = () => {
+      menuSort.style.display = "none"
+    };
+
+    subMenuSort.addEventListener("click", showOrderNames);
+    subMenuSort.addEventListener("mouseleave", hideOrderNames);
+
 
 
 console.log(filterName(allData, "Pikachu"))
@@ -135,7 +159,7 @@ let searchName =document.querySelector("#searchName")
 searchName.addEventListener( "keyup", getName )
 
  function getName (){
-  let namePokemon=  searchName.value
+  let namePokemon=  searchName.value;
   
  createCard(filterName(allData,namePokemon))
  }
@@ -263,7 +287,7 @@ function getColor (type) {
     return  `<img class="typeElement" src="images/type_bug.png"></img>`
   }
 
-  return "Sin tipo"
+  return ""
   }
 
       
