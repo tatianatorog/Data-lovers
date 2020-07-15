@@ -72,7 +72,7 @@ body {
 
 .menu li a:hover{
 	color: #48688ad3;
-    /* transition: all .3s; */
+    transition: all .3s;
     background-color: wheat;
 }
 
@@ -127,6 +127,7 @@ body {
 
 .menuSort li{
     margin: 10px 0px 10px 0px;
+
 }
 .menuSort li a{
 	padding: 5px;
@@ -136,9 +137,9 @@ body {
     color: white;
 }
 
-/* .menuSort li a:target{
+.menuSort li a:target{
     display: block;
-} */
+} 
 
 
 .menu li:hover .menuSort{
@@ -174,8 +175,8 @@ body {
     text-align: center;
     padding-bottom: 5px;
     box-shadow: 11px 9px 23px -12px rgba(0,0,0,0.38);
-    z-index: -10;
-}
+    /* z-index: -10; */
+} 
 
 .name {
     background-color: rgba(242, 200,73, 1);
@@ -258,7 +259,12 @@ body {
 	color: #000;
 } 
 
-.blue_bar {
+.name_popup {
+    position: relative;
+    top: -15px;
+}
+
+.white_bar {
     background: #ffffff;
     border-radius: 5px;
     width: 45vw;
@@ -269,6 +275,8 @@ body {
     box-sizing: border-box;
     margin-top: -12px;
     font-weight: bold;
+    position: relative;
+    top: -17px;
 }
 
 .pokemon_info {
@@ -283,24 +291,41 @@ body {
 }
 
 
-#weaknesses {
-    word-spacing:0.5rem;
-    word-break: break-all;
+.typeElement{
+    width: 70px;
+    height: 70px;
+
 }
 
-#Grass{
-    width: 50px;
-     height: 50px;;
-     border-radius: 50%;
-     background: #5cb85c;
-}
+/* #Grass{
+    /* width: 50px;
+     height: 50px;; */
+     /* background-image: url("images/type_grass.png");
+} */
 
-#Poison{
+/* #Poison{
     width: 50px;
     height: 50px;
     border-radius: 50%;
     box-shadow: 30px 10px 0 #d9534f;
+} */ 
+
+/* #Fire{
+
 }
+#Fighting{
+
+}
+#Rock{}
+#Ground{}
+#Water{}
+#Psychic{}
+#Electric{}
+#Normal{}
+#Ice{}
+#Ghost{}
+#Dragon{}
+#Bug{} */
 
 
     

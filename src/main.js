@@ -12,6 +12,7 @@ import {
   
   orderNames,
   filterType,
+  filterName,
   // computeType,
   
 } from './data.js';
@@ -41,7 +42,7 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
             
             let typeColorPokemon = allData[i].type[t];
             let color = getColor(typeColorPokemon);
-            typeSection =  typeSection + color + typeColorPokemon;
+            typeSection =  typeSection + color ;
 
           }
 
@@ -57,8 +58,8 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
                 <a href="#" id="btn-close-popup" class="btn-close-popup" onclick="closeModal(${allData[i].id})"><i class="fas fa-times"></i> </a>
                 <img src="${allData[i].img}" alt="pokemon_card_popup">
                 <h2 class="name_popup">${allData[i].name} ${allData[i].num}</h2>
-                <div class="blue_bar"> </div>
-                <div class="type" id="${allData[i].type}">Type: ${typeSection}</div>
+                <div class="white_bar"> </div>
+                <div class="type" id="${allData[i].type}">${typeSection}</div>
                 <div class="container2_popup">
                 <p class="pokemon_info"> <strong> Weaknesses: </strong>  ${allData[i].weaknesses.join(", ")} </p>
                 <p class="pokemon_info"><strong>Candy:</strong> ${allData[i].candy}</p>
@@ -111,19 +112,36 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     typePokemon.addEventListener('click', getFilterCards)
    
 
-    // const showType = () => {
-    //   typePokemon.style.display = "grid";
-    // };
+    const showType = () => {
+      typePokemon.style.display = "grid";
+    };
 
-    // let typeLink = document.querySelector("#typeLink");
-    // typeLink.addEventListener("click", showType);
+    let typeLink = document.querySelector("#typeLink");
+    typeLink.addEventListener("click", showType);
 
-    // const showOrderNames = () => {
-    //   menuSort.style.display = "block"
-    // };
+    const showOrderNames = () => {
+      menuSort.style.display = "block"
+    };
 
-    // let sortNames = document.querySelector("#sortNames");
-    // sortNames.addEventListener("click", showOrderNames);
+    let sortNames = document.querySelector("#sortNames");
+    sortNames.addEventListener("click", showOrderNames);
+
+
+console.log(filterName(allData, "Pikachu"))
+
+let searchName =document.querySelector("#searchName")
+
+ 
+searchName.addEventListener( "keyup", getName )
+
+ function getName (){
+  let namePokemon=  searchName.value
+  
+ createCard(filterName(allData,namePokemon))
+ }
+
+ 
+
 
 
 
@@ -190,14 +208,62 @@ function closeModal (id) {
 
 function getColor (type) {
   if (type === "Grass") {
-    return `<div id="green"></div>`
+    return `<img class="typeElement" src="images/type_grass.png"></img>`
+  }
+  
+  if (type === "Poison"){
+    return  `<img class="typeElement" src="images/type_poison.png"></img>`
+  }
+  
+  if (type === "Fire"){
+    return  `<img class="typeElement" src="images/type_fire.png"></img>`
+  } 
+  
+  if (type === "Fighting"){
+    return  `<img class="typeElement" src="images/type_fighting.png"></img>`
+  }
+  
+  if (type === "Rock"){
+    return  `<img class="typeElement" src="images/type_rock.png"></img>`
+  }
+  
+  if (type === "Water"){
+    return  `<img class="typeElement" src="images/type_water.png"></img>`
+  }
+  
+  if (type === "Ground"){
+    return  `<img class="typeElement" src="images/type_ground.png"></img>`
+  }
+  
+  if (type === "Psychic"){
+    return  `<img class="typeElement" src="images/type_psychic.png"></img>`
+  }
+  
+  if (type === "Electric"){
+    return  `<img class="typeElement" src="images/type_electric.png"></img>`
+  }
+  
+  if (type === "Normal"){
+    return  `<img class="typeElement" src="images/type_normal.png"></img>`
+  }
+  
+  if (type === "Ice"){
+    return  `<img class="typeElement" src="images/type_ice.png"></img>`
+  }
+  
+  if (type === "Ghost"){
+    return  `<img class="typeElement" src="images/type_ghost.png"></img>`
+  }
+  
+  if (type === "Dragon"){
+    return  `<img class="typeElement" src="images/type_dragon.png"></img>`
+  }
+  
+  if (type === "Bug"){
+    return  `<img class="typeElement" src="images/type_bug.png"></img>`
   }
 
-  return "blue"
-
-}
-
-
-// `<div id="Grass"></div>`
+  return "Sin tipo"
+  }
 
       

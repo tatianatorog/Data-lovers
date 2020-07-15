@@ -30,6 +30,10 @@ export const orderNames = (data, option) => {
           return newFilterType;
  }
 
+ export const filterName = (data, pokemon) => {
+  const newArrayname = data.filter((object) => object.name.toLowerCase().includes(pokemon));
+  return newArrayname;
+}
 
 
 //  export const computeType = (data) => {
