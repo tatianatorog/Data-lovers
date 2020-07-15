@@ -19,7 +19,6 @@ body {
     top: 0;
     box-sizing: border-box;   
  }
- 
  #bigContainerResult{
     position: fixed;
     top: 42vw;
@@ -36,7 +35,6 @@ body {
     display:none;
     z-index: -9;
 }
-
 
 
  .navegation{
@@ -327,9 +325,7 @@ body {
 #Dragon{}
 #Bug{} */
 
+p#Grass,Poison.type {
 
-    
-  
-   
-
-    
+    background-color: #9bcc50;
+}
