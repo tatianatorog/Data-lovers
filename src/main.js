@@ -13,6 +13,9 @@ import {
   orderNames,
   filterType,
   filterName,
+  candyAmountAvg,
+  sweetestPokemon,
+  minCandiesPokemon,
   // computeType,
   
 } from './data.js';
@@ -24,8 +27,7 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
 
   const allData= data.pokemon
   createCard(allData);
-         
-       
+  
     function createCard (allData) {
      
       let card = '';
@@ -33,7 +35,7 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
         for ( let i = 0;  i < allData.length; i++) {
               
           if (allData[i].candy_count === undefined) {
-              allData[i].candy_count = 'I do not eat candies'
+              allData[i].candy_count = 0
           }
 
           let typeSection = "";
@@ -82,11 +84,16 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
           document.getElementById('listOfPokemon').innerHTML = card
 
         }
-      
+     
+        
+    const containerCharts = document.querySelector('#containerCharts')
+
   
     const getOrderCards = (e)=>{
       const eventBtnSort= e.target.textContent
       createCard(orderNames(allData, eventBtnSort))
+      pokemonGalery.style.display= 'block'
+      containerCharts.style.display= 'none'
     }
 
 
@@ -101,7 +108,9 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
       let calculo = lengthType(filtroP)
       let resultType = document.getElementById("bigContainerResult")
       resultType.style.display = 'flex';
-      resultType.innerHTML = `${calculo} of the Pokemons at the Kanto region are ${eventBtnFilter}` 
+      resultType.innerHTML = `${calculo}% of the Pokemons at the Kanto region are ${eventBtnFilter}` 
+      pokemonGalery.style.display= 'block'
+      containerCharts.style.display= 'none'
       
       // typePokemon.style.display = 'none';
     }
@@ -160,6 +169,8 @@ searchName.addEventListener( "keyup", getName )
 
  function getName (){
   let namePokemon=  searchName.value;
+  containerCharts.style.display= 'none'
+  pokemonGalery.style.display= 'block'
   
  createCard(filterName(allData,namePokemon))
  }
@@ -172,23 +183,33 @@ searchName.addEventListener( "keyup", getName )
 
 
     const lengthType = (type) => {
-      let result = type.length
+      let result = Math.round((type.length/151)*100)
       return result; 
   }
 
+  console.log(candyAmountAvg(allData))
 
+  console.log(sweetestPokemon(allData))
 
+  console.log(minCandiesPokemon(allData))
 
- const newComputeType = allData.reduce((contador, option) => {
-  if (option === "Grass") {
-    return contador + 1;
-  } else {
-   return contador;
-  }
+  
+  // var mostExpPilot = allData.reduce(function (oldest, pilot) {
+  //   return (oldest.candy_count || 0) < pilot.candy_count ? oldest : pilot;
+  // }, {});
 
- }, 0);
+  // console.log(mostExpPilot)
 
- console.log(newComputeType)
+//  const newComputeType = allData.reduce((contador, option) => {
+//   if (option === "Grass") {
+//     return contador + 1;
+//   } else {
+//    return contador;
+//   }
+
+//  }, 0);
+
+//  console.log(newComputeType)
 
 })
 
@@ -215,17 +236,20 @@ function closeModal (id) {
 
 
 // function getColor (type) {
+//   let templateImgType;
 //   switch (type) {
-//     case type == "Grass":
-//      console.log("Soy grass");
+//     case  "Grass":
+//       templateImgType = `<img class="typeElement" src="images/type_grass.png"></img>`;
 //       break;
-//     case type == "Poison":
-//       `<div id="Poison"></div>`;
+//     case "Poison":
+//       console.log("Soy poisson");
 //       break;
 //     default:
-//       console.log("Soy tipo" + type)
+//       console.log("si") 
 
-//   };
+//   }
+//   console.log(templateImgType)
+//   return  templateImgType;
 
 // }
  
@@ -289,5 +313,68 @@ function getColor (type) {
 
   return ""
   }
+  const containerCharts = document.querySelector('#containerCharts')
+  const home  = document.querySelector('#home') 
+  const showPokemon = () =>{
+    containerCharts.style.display= 'none'
+    pokemonGalery.style.display= 'block'
+  }
+  home.addEventListener('click', showPokemon)
 
-      
+
+ 
+   const chartBtn = document.querySelector('#chartLink') 
+   const pokemonGalery = document.querySelector('#pokemonGalery')
+   
+  
+   const showCharts = () =>{
+    pokemonGalery.style.display= 'none'
+    containerCharts.style.display= 'block'
+    
+   }
+   chartBtn.addEventListener('click', showCharts)
+  
+  const infoPokemon = document.querySelector('#info');
+   const title= document.createElement('h1')
+   title.textContent = 'Important data about the Pokemon'
+
+   infoPokemon.appendChild(title);
+
+   const titleChartType= document.createElement('h2')
+   titleChartType.textContent = 'Percentaje according to the type of Pokemon'
+
+   infoPokemon.appendChild(titleChartType);
+
+   const canvas= document.createElement('canvas')
+  //  titleChartType.textContent = 'Percentaje according to the type of Pokemon'
+
+   infoPokemon.appendChild(canvas);
+
+
+   const ctx= document.querySelector('canvas').getContext("2d");
+   const myChart= new Chart(ctx,{
+       type:"bar",
+       data:{
+           labels:['col1','col2','col3'],
+           datasets:[{
+                   label:'Num datos',
+                   data:[10,9,15],
+                   backgroundColor:[
+                       'rgb(66, 134, 244,0.5)',
+                       'rgb(74, 135, 72,0.5)',
+                       'rgb(229, 89, 50,0.5)'
+                   ]
+           }]
+       },
+       options:{
+           scales:{
+               yAxes:[{
+                       ticks:{
+                           beginAtZero:true
+                       }
+               }]
+           }
+       }
+   });
+
+   window.myChart= myChart;
