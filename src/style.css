@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
     color: #333333;
     margin: 0px;
     padding: 0px;
@@ -104,13 +104,14 @@ header nav ul li .menuType li a span {
 }
 
 header nav ul li .menuSort {
-	/* display: none; */
+	display: none;
 	background:#6a97c7;
 	position: absolute;
 	width: 100%;
     z-index:1000;
     padding: 0px;
     text-align: center;
+
 }
 
 header nav ul li .menuSort li {
@@ -142,23 +143,15 @@ header nav ul li #caret  {
 	margin-right:0px;
 }
 
-
-
-
-
-
-
-
  #bigContainerResult{
     position: relative;
-    top: 42vw;
+    top: 25vw;
     padding: 0px 15px;
     text-align: center;
     background: #f4f4f4;
     font-size: 14px;
     width:100%;
     height: 30px;
-    display:flex;
     align-items: center;
     justify-content: center;
     color: gray;
@@ -174,83 +167,6 @@ header nav ul li #caret  {
     font-family: 'Roboto', sans-serif;
 
 }
-
-
-
-
-
-/* .menuType {
-	position: absolute;
-	background: #48688ad3;
-	width: 250%;
-    opacity: 0;
-    color: white;
-    transition: opacity 1.5s;
-    margin-top: -0.6vh;
-    padding: 0px;
-    display: none;
-    grid-template-columns: 50% 50%;
-    
-} */
-
-/* .menuType li{
-    margin: 10px 0px 10px 0px;
-}
-
-.menuType li a{
-
-    padding: 5px;
-    padding-right: 15px;
-    padding-left: 20px;
-	color: white;
-	font-family: 'Roboto', sans-serif;;
-    text-decoration: none;
-} */
-
-/* .menuType li a:target{
-    display: block;
-    padding: 10px;
-} */
-
-
-/* .menuSort {
-    position: absolute;
-	background:#48688ad3;
-	width: 100%;
-	opacity: 0;
-    transition: opacity 1.5s;
-    margin-top: -0.6vh;
-    padding: 0px;
-    text-align: center;
-} */
-
-/* .menuSort li{
-    margin: 10px 0px 10px 0px;
-
-}
-.menuSort li a{
-	padding: 5px;
-	color: #333333;
-    font-family: 'Roboto', sans-serif;;
-    text-decoration: none;
-    color: white;
-}
-
-.menuSort li a:target{
-    display: block;
-} 
-
-
-.menu li:hover .menuSort{
-	display: block;
-	opacity: 1;
-}
-
-.menu li:hover .menuType{
-	display: block;
-	opacity: 1;
-} */
-
 
 #listOfPokemon {
     display: flex;
@@ -312,7 +228,9 @@ header nav ul li #caret  {
     height: 50px;
     align-items: center;
     box-sizing: border-box; 
-    bottom: 0px;
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
 }
 
 .overlay {
@@ -405,13 +323,33 @@ header nav ul li #caret  {
     text-align: center;
 }
 
-#info canvas{
-    width:300;
-    height:300;
-}
+.chartData{
+    width: 100%;
+    height: 400px;
 
+}
 #info h2{
      margin-top:20px;
     text-align: center;
 }
 
+#containerCharts {
+    display: none;
+}
+
+#info p {
+    background: #f4f4f4;
+    width: 300px;
+    height: 150px;
+    list-style: none;
+    font-size: 15px;
+    border-radius: 15px;
+    margin: 10px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 11px 9px 23px -12px rgba(0,0,0,0.38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

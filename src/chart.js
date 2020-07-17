@@ -23,6 +23,7 @@ import {
   
    const showCharts = () =>{
     pokemonGalery.style.display= 'none'
+    // resultType.style.display= 'none'
     containerCharts.style.display= 'block'
     
    }
@@ -37,23 +38,21 @@ import {
    textNoCandies.innerHTML = `The only pokemon in Kanto region that doesn't eat candy is ${allData[150].name} <img src="${allData[150].img}" alt="pokemon_150">`;
    infoPokemon.appendChild(textNoCandies);
 
-   
-
-   
-
    const textAvgCandies = document.createElement('p');
    textAvgCandies.textContent = "The pokemon´s candy count average is candyAmountAvg 27";
    infoPokemon.appendChild(textAvgCandies);
 
    const titleChartType= document.createElement('h2')
-   titleChartType.textContent = 'Percentaje according to the type of Pokemon'
+   titleChartType.textContent = 'Percent according to the type of Pokemon'
 
    infoPokemon.appendChild(titleChartType);
 
-   const canvas= document.createElement('canvas')
-  //  titleChartType.textContent = 'Percentaje according to the type of Pokemon'
+//    const chartData = document.querySelector('.chartData');
 
-   infoPokemon.appendChild(canvas);
+//    const canvas= document.createElement('canvas')
+//   //  titleChartType.textContent = 'Percentaje according to the type of Pokemon'
+
+//   chartData.appendChild(canvas);
 
 
 // ;
@@ -64,9 +63,9 @@ import {
 
 // console.log(maxCandy, minCandy)
 
-const ctx= document.querySelector('canvas').getContext("2d");
+const ctx= document.querySelector('.charts').getContext("2d");
 const myChart= new Chart(ctx,{
-   type:"bar",
+   type:"horizontalBar",
    data:{
        labels:["Grass",
                 "Poison",
@@ -103,22 +102,53 @@ const myChart= new Chart(ctx,{
                 
                 ],
                backgroundColor:[
-                   'rgb(66, 134, 244,0.5)',
-                   'rgb(74, 135, 72,0.5)',
-                   'rgb(229, 89, 50,0.5)'
+                   '#E8E85F',
+                   '#B92025',
+                   '#F37021',
+                   '#662D91',
+                   '#745C44',
+                   '#0A87B3',
+                   '#915022',
+                   '#C03995',
+                   '#F3B81A',
+                   '#FFFFFF',
+                   '#86DCF7',
+                   '#8B7E71',
+                   '#459F46',
+                   '#35D384',
+
                ]
        }]
    },
-   options:{
-       scales:{
-           yAxes:[{
-                   ticks:{
-                       beginAtZero:true
-                   }
-           }]
-       }
+   options: {
+    responsive: true,
+    responsiveAnimationDuration: 0,
+    maintainAspectRatio: 0,
+    //   title: {
+    //       display: true,
+    //       text: 'Cantidad de Pokemones por Tipo',
+    //       fontSize: 15,
+    //       padding: 5,
+    //       fontColor: '#1C2D61',
+    //   },
+      legend: {          
+          labels: {
+              width: 100,
+              height: 300,
+              fontSize: 15,
+              padding: 5,
+              boxWidth: 10,
+              fontFamily: 'Roboto',
+              fontColor: 'black',       
+          }
+      },     
+    //   tooltips: {                   
+    //       xPadding: 10,
+    //       yPadding: 10,
+    //   }
    }
 });
+
 
 
 

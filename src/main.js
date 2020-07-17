@@ -93,22 +93,22 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     const menuContent = document.querySelector("#menuContent");
     const home  = document.querySelector('#home')
     const pokemonGalery = document.querySelector('#pokemonGalery')
-    let menuType = document.querySelector('.menuType')  
-    let menuSort = document.querySelector('.menuSort');
-    let subMenu= document.querySelector(".submenu");
-
-
+    const subMenuSort = document.querySelector(".submenuSort"); 
+    const menuType = document.querySelector('.menuType')  
+    const menuSort = document.querySelector('.menuSort');
+    const subMenuType= document.querySelector(".subMenuType");
     const containerCharts = document.querySelector('#containerCharts')
+    let resultType = document.getElementById("bigContainerResult")
 
     const showMenuBar = () => {
-      menuContent.style.display = "block"
+      menuContent.classList.toggle("hidden")
       };
     menuBar.addEventListener("click", showMenuBar);
     
-    const hideMenuBar = () => {
-      menuContent.style.display = "none"
-    };
-    menuBar.addEventListener("mouseleave", hideMenuBar);
+    // const hideMenuBar = () => {
+    //   menuContent.classList.toggle("hidden")6
+    // };
+    // menuBar.addEventListener("click", hideMenuBar);
 
     
     const showPokemon = () =>{
@@ -124,55 +124,52 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
       pokemonGalery.style.display= 'block'
       containerCharts.style.display= 'none'
     }
+    menuSort.addEventListener('click',getOrderCards) 
+    
+
+    const showOrderNames = () => {
+      menuSort.style.display = "block"
+    };
+    subMenuSort.addEventListener("click", showOrderNames);
+
+    const hideOrderNames = () => {
+      menuSort.style.display = "none"
+    };
+    subMenuSort.addEventListener("mouseleave", hideOrderNames);
+
+    const showType = () => {
+      menuType.style.display = "grid";
+    
+    };
+    subMenuType.addEventListener("click", showType);
+
+    const hideType = () => {
+      menuType.style.display = "none";
+    };
+    subMenuType.addEventListener("mouseleave", hideType)
 
     
-    menuSort.addEventListener('click',getOrderCards) 
 
     const getFilterCards = (e)=>{
       const eventBtnFilter= e.target.textContent
       let newArrFilterType = filterType(allData, eventBtnFilter)
       createCard(newArrFilterType)
       let compute = percentPokemon(newArrFilterType)
-      let resultType = document.getElementById("bigContainerResult")
       resultType.style.display = 'flex';
       resultType.innerHTML = `${compute}% of the Pokemons at the Kanto region are ${eventBtnFilter}` 
       pokemonGalery.style.display= 'block'
       containerCharts.style.display= 'none'
-      
-      // typePokemon.style.display = 'none';
     }
-    
-     
     menuType.addEventListener('click', getFilterCards)
    
 
-    const showType = () => {
-      menuType.style.display = "grid";
-    };
-
-    const hideType = () => {
-      menuType.style.display = "none";
-    };
-
+   
+    
+    
 
     
 
-    subMenu.addEventListener("click", showType);
-
-    subMenu.addEventListener("mouseleave", hideType)
-
     
-    let subMenuSort = document.querySelector(".submenuSort"); 
-    const showOrderNames = () => {
-      menuSort.style.display = "block"
-    };
-
-    const hideOrderNames = () => {
-      menuSort.style.display = "none"
-    };
-
-    subMenuSort.addEventListener("click", showOrderNames);
-    subMenuSort.addEventListener("mouseleave", hideOrderNames);
 
 
 
