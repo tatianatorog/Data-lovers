@@ -13,12 +13,12 @@ import {
   orderNames,
   filterType,
   filterName,
+  percentPokemon,
   candyAmountAvg,
-  sweetestPokemon,
-  minCandiesPokemon,
   // computeType,
   
 } from './data.js';
+
 
 
 fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/src/data/pokemon/pokemon.json')
@@ -86,8 +86,37 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
         }
      
         
+        console.log(candyAmountAvg(allData));
+
+    //Botones Menú
+    const menuBar = document.querySelector("#menuBar");
+    const menuContent = document.querySelector("#menuContent");
+    const home  = document.querySelector('#home')
+    const pokemonGalery = document.querySelector('#pokemonGalery')
+    let menuType = document.querySelector('.menuType')  
+    let menuSort = document.querySelector('.menuSort');
+    let subMenu= document.querySelector(".submenu");
+
+
     const containerCharts = document.querySelector('#containerCharts')
 
+    const showMenuBar = () => {
+      menuContent.style.display = "block"
+      };
+    menuBar.addEventListener("click", showMenuBar);
+    
+    const hideMenuBar = () => {
+      menuContent.style.display = "none"
+    };
+    menuBar.addEventListener("mouseleave", hideMenuBar);
+
+    
+    const showPokemon = () =>{
+      containerCharts.style.display= 'none'
+      pokemonGalery.style.display= 'block'
+      }
+    home.addEventListener('click', showPokemon) 
+    
   
     const getOrderCards = (e)=>{
       const eventBtnSort= e.target.textContent
@@ -96,37 +125,24 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
       containerCharts.style.display= 'none'
     }
 
-
-
-    let menuSort = document.querySelector('.menuSort');
+    
     menuSort.addEventListener('click',getOrderCards) 
 
     const getFilterCards = (e)=>{
       const eventBtnFilter= e.target.textContent
-      let filtroP = filterType(allData, eventBtnFilter)
-      createCard(filtroP)
-      let calculo = lengthType(filtroP)
+      let newArrFilterType = filterType(allData, eventBtnFilter)
+      createCard(newArrFilterType)
+      let compute = percentPokemon(newArrFilterType)
       let resultType = document.getElementById("bigContainerResult")
       resultType.style.display = 'flex';
-      resultType.innerHTML = `${calculo}% of the Pokemons at the Kanto region are ${eventBtnFilter}` 
+      resultType.innerHTML = `${compute}% of the Pokemons at the Kanto region are ${eventBtnFilter}` 
       pokemonGalery.style.display= 'block'
       containerCharts.style.display= 'none'
       
       // typePokemon.style.display = 'none';
     }
-
-    let menuContent = document.querySelector("#menuContent");
-    let menuBar = document.querySelector("#menuBar");
-   
-
-    const showMenu = () => {
-      menuContent.style.display = "block"
-    };
-
-    menuBar.addEventListener("click", showMenu);
-
-
-    let menuType = document.querySelector('.menuType')    
+    
+     
     menuType.addEventListener('click', getFilterCards)
    
 
@@ -139,7 +155,7 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     };
 
 
-    let subMenu= document.querySelector(".submenu");
+    
 
     subMenu.addEventListener("click", showType);
 
@@ -175,6 +191,7 @@ searchName.addEventListener( "keyup", getName )
  createCard(filterName(allData,namePokemon))
  }
 
+ const avgCandy = candyAmountAvg(allData)
  
 
 
@@ -182,16 +199,9 @@ searchName.addEventListener( "keyup", getName )
 
 
 
-    const lengthType = (type) => {
-      let result = Math.round((type.length/151)*100)
-      return result; 
-  }
+ 
 
-  console.log(candyAmountAvg(allData))
 
-  console.log(sweetestPokemon(allData))
-
-  console.log(minCandiesPokemon(allData))
 
   
   // var mostExpPilot = allData.reduce(function (oldest, pilot) {
@@ -211,7 +221,10 @@ searchName.addEventListener( "keyup", getName )
 
 //  console.log(newComputeType)
 
+
+
 })
+
 
 
 window.modal = modal;
@@ -313,68 +326,12 @@ function getColor (type) {
 
   return ""
   }
-  const containerCharts = document.querySelector('#containerCharts')
-  const home  = document.querySelector('#home') 
-  const showPokemon = () =>{
-    containerCharts.style.display= 'none'
-    pokemonGalery.style.display= 'block'
-  }
-  home.addEventListener('click', showPokemon)
+  // const containerCharts = document.querySelector('#containerCharts')
+  
+
+   
+   
 
 
- 
-   const chartBtn = document.querySelector('#chartLink') 
-   const pokemonGalery = document.querySelector('#pokemonGalery')
    
   
-   const showCharts = () =>{
-    pokemonGalery.style.display= 'none'
-    containerCharts.style.display= 'block'
-    
-   }
-   chartBtn.addEventListener('click', showCharts)
-  
-  const infoPokemon = document.querySelector('#info');
-   const title= document.createElement('h1')
-   title.textContent = 'Important data about the Pokemon'
-
-   infoPokemon.appendChild(title);
-
-   const titleChartType= document.createElement('h2')
-   titleChartType.textContent = 'Percentaje according to the type of Pokemon'
-
-   infoPokemon.appendChild(titleChartType);
-
-   const canvas= document.createElement('canvas')
-  //  titleChartType.textContent = 'Percentaje according to the type of Pokemon'
-
-   infoPokemon.appendChild(canvas);
-
-
-   const ctx= document.querySelector('canvas').getContext("2d");
-   const myChart= new Chart(ctx,{
-       type:"bar",
-       data:{
-           labels:['col1','col2','col3'],
-           datasets:[{
-                   label:'Num datos',
-                   data:[10,9,15],
-                   backgroundColor:[
-                       'rgb(66, 134, 244,0.5)',
-                       'rgb(74, 135, 72,0.5)',
-                       'rgb(229, 89, 50,0.5)'
-                   ]
-           }]
-       },
-       options:{
-           scales:{
-               yAxes:[{
-                       ticks:{
-                           beginAtZero:true
-                       }
-               }]
-           }
-       }
-   });
-
-   window.myChart= myChart;

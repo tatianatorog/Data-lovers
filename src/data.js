@@ -42,60 +42,37 @@ export const orderNames = (data, option) => {
   const avgCandyCount = allData.reduce((acc, character) => (acc + (character.candy_count)/151), 0);
   
   return Math.round(avgCandyCount);
+
+
   }
+
 
   
    export const sweetestPokemon =(allData,) => {
    const sweeterPokemon = allData.reduce((sweetest, character) => {
      let candies = (sweetest.candy_count || 0) > character.candy_count ? sweetest : character;
-     
      return candies;
   }, {});
   
   return sweeterPokemon
+  
 }
 
 
 export const minCandiesPokemon =(allData,) => {
   const pokemonWhitNoCandies = allData.reduce((sweet, character) => {
-    let candies = (sweet.candy_count || 0) < character.candy_count ? sweet : character;
+    let noCandies = (sweet.candy_count || 0) < character.candy_count ? sweet : character;
     
-    return candies;
+    return noCandies;
  }, {});
  
  return pokemonWhitNoCandies
 }
 
 
-  // var mostExpPilot = allData.reduce(function (oldest, pilot) {
-  //   return (oldest.candy_count || 0) < pilot.candy_count ? oldest : pilot;
-  // }, {});
 
-  // console.log(mostExpPilot)
+  export const percentPokemon = (type,) => {
+    let result = Math.round((type.length/151)*100)
+   return result; 
 
-
-  // console.log(mostExpPilot)
-  
-  // Math.round(totalCandyCount/151)
-
-
-
-
-//  export const computeType = (data) => {
-
-//   const newComputeType = data.reduce((contador, option) => {
-//     if (option. === "Grass") {
-//       return contador + 1;
-//     } else {
-//      return contador;
-//     }
-
-//    }, 0);
-
-//   }
-
-
-//   const lengthType = (type) => {
-//     let result = parseInt(type.length);
-//     return result; 
-// }
+}
