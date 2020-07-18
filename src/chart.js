@@ -124,13 +124,6 @@ const myChart= new Chart(ctx,{
     responsive: true,
     responsiveAnimationDuration: 0,
     maintainAspectRatio: 0,
-    //   title: {
-    //       display: true,
-    //       text: 'Cantidad de Pokemones por Tipo',
-    //       fontSize: 15,
-    //       padding: 5,
-    //       fontColor: '#1C2D61',
-    //   },
       legend: {          
           labels: {
               width: 100,
@@ -142,10 +135,6 @@ const myChart= new Chart(ctx,{
               fontColor: 'black',       
           }
       },     
-    //   tooltips: {                   
-    //       xPadding: 10,
-    //       yPadding: 10,
-    //   }
    }
 });
 

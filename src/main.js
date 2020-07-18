@@ -43,7 +43,7 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
           for (let t=0; t< allData[i].type.length; t++) {
             
             let typeColorPokemon = allData[i].type[t];
-            let color = getColor(typeColorPokemon);
+            let color = getImg(typeColorPokemon);
             typeSection =  typeSection + color ;
 
           }
@@ -73,11 +73,7 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
                 </div>
                 </div>
 
-                ` 
-                // console.log(allData[i].weaknesses);
-
-                
- 
+                `
 
           }
           
@@ -85,8 +81,6 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
 
         }
      
-        
-        console.log(candyAmountAvg(allData));
 
     //Botones Menú
     const menuBar = document.querySelector("#menuBar");
@@ -99,17 +93,13 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     const subMenuType= document.querySelector(".subMenuType");
     const containerCharts = document.querySelector('#containerCharts')
     let resultType = document.getElementById("bigContainerResult")
+    let searchName =document.querySelector("#searchName")
 
+    //Mostrar y ocultar ventanas 
     const showMenuBar = () => {
       menuContent.classList.toggle("hidden")
       };
     menuBar.addEventListener("click", showMenuBar);
-    
-    // const hideMenuBar = () => {
-    //   menuContent.classList.toggle("hidden")6
-    // };
-    // menuBar.addEventListener("click", hideMenuBar);
-
     
     const showPokemon = () =>{
       containerCharts.style.display= 'none'
@@ -117,7 +107,6 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
       }
     home.addEventListener('click', showPokemon) 
     
-  
     const getOrderCards = (e)=>{
       const eventBtnSort= e.target.textContent
       createCard(orderNames(allData, eventBtnSort))
@@ -126,7 +115,6 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     }
     menuSort.addEventListener('click',getOrderCards) 
     
-
     const showOrderNames = () => {
       menuSort.style.display = "block"
     };
@@ -148,8 +136,6 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     };
     subMenuType.addEventListener("mouseleave", hideType)
 
-    
-
     const getFilterCards = (e)=>{
       const eventBtnFilter= e.target.textContent
       let newArrFilterType = filterType(allData, eventBtnFilter)
@@ -161,44 +147,18 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
       containerCharts.style.display= 'none'
     }
     menuType.addEventListener('click', getFilterCards)
-   
 
-   
-    
-    
+    function getName (){
+      let namePokemon=  searchName.value;
+      containerCharts.style.display= 'none'
+      pokemonGalery.style.display= 'block'
+      
+    createCard(filterName(allData,namePokemon))
+    }
 
-    
+    searchName.addEventListener( "keyup", getName )
 
-    
-
-
-
-console.log(filterName(allData, "Pikachu"))
-
-let searchName =document.querySelector("#searchName")
-
- 
-searchName.addEventListener( "keyup", getName )
-
- function getName (){
-  let namePokemon=  searchName.value;
-  containerCharts.style.display= 'none'
-  pokemonGalery.style.display= 'block'
-  
- createCard(filterName(allData,namePokemon))
- }
-
- const avgCandy = candyAmountAvg(allData)
- 
-
-
-
-
-
-
- 
-
-
+    const avgCandy = candyAmountAvg(allData)
 
   
   // var mostExpPilot = allData.reduce(function (oldest, pilot) {
@@ -222,6 +182,7 @@ searchName.addEventListener( "keyup", getName )
 
 })
 
+//Mostrar y ocultar modales
 
 
 window.modal = modal;
@@ -243,87 +204,63 @@ function closeModal (id) {
     overlay.style.display = 'none';
 }
 
+//Funcion mostrar img en modales según tipo
 
+function getImg (type) {
+  let templateImgType;
+  switch (type) {
+    case  "Grass":
+      templateImgType = `<img class="typeElement" src="images/type_grass.png"></img>`;
+      break;
+    case "Poison":
+      templateImgType = `<img class="typeElement" src="images/type_poison.png"></img>`;
+      break;
+      case "Fire":
+      templateImgType =  `<img class="typeElement" src="images/type_fire.png"></img>`;
+      break;
+      case "Fighting":
+      templateImgType =  `<img class="typeElement" src="images/type_fighting.png"></img>`;
+      break;
+      case "Rock":
+      templateImgType = `<img class="typeElement" src="images/type_rock.png"></img>`;
+      break;
+      case "Water":
+      templateImgType = `<img class="typeElement" src="images/type_water.png"></img>`;
+      break;
+      case "Ground":
+      templateImgType = `<img class="typeElement" src="images/type_ground.png"></img>`;
+      break;
+      case "Psychic":
+      templateImgType = `<img class="typeElement" src="images/type_psychic.png"></img>`;
+      break;
+      case "Psychic":
+      templateImgType = `<img class="typeElement" src="images/type_psychic.png"></img>`;
+      break;
+      case "Electric":
+      templateImgType = `<img class="typeElement" src="images/type_electric.png"></img>`;
+      break;
+      case "Normal":
+      templateImgType = `<img class="typeElement" src="images/type_normal.png"></img>`;
+      break;
+      case "Ice":
+      templateImgType = `<img class="typeElement" src="images/type_ice.png"></img>`;
+      break;
+      case "Ghost":
+      templateImgType = `<img class="typeElement" src="images/type_ghost.png"></img>`;
+      break;
+      case  "Dragon":
+      templateImgType = `<img class="typeElement" src="images/type_dragon.png"></img>`;
+      break;
+      case "Bug":
+      templateImgType = `<img class="typeElement" src="images/type_bug.png"></img>`;
+      break;
+    default:
+      ""
 
-// function getColor (type) {
-//   let templateImgType;
-//   switch (type) {
-//     case  "Grass":
-//       templateImgType = `<img class="typeElement" src="images/type_grass.png"></img>`;
-//       break;
-//     case "Poison":
-//       console.log("Soy poisson");
-//       break;
-//     default:
-//       console.log("si") 
+  }
+  return  templateImgType;
 
-//   }
-//   console.log(templateImgType)
-//   return  templateImgType;
-
-// }
- 
-
-function getColor (type) {
-  if (type === "Grass") {
-    return `<img class="typeElement" src="images/type_grass.png"></img>`
-  }
-  
-  if (type === "Poison"){
-    return  `<img class="typeElement" src="images/type_poison.png"></img>`
-  }
-  
-  if (type === "Fire"){
-    return  `<img class="typeElement" src="images/type_fire.png"></img>`
-  } 
-  
-  if (type === "Fighting"){
-    return  `<img class="typeElement" src="images/type_fighting.png"></img>`
-  }
-  
-  if (type === "Rock"){
-    return  `<img class="typeElement" src="images/type_rock.png"></img>`
-  }
-  
-  if (type === "Water"){
-    return  `<img class="typeElement" src="images/type_water.png"></img>`
-  }
-  
-  if (type === "Ground"){
-    return  `<img class="typeElement" src="images/type_ground.png"></img>`
-  }
-  
-  if (type === "Psychic"){
-    return  `<img class="typeElement" src="images/type_psychic.png"></img>`
-  }
-  
-  if (type === "Electric"){
-    return  `<img class="typeElement" src="images/type_electric.png"></img>`
-  }
-  
-  if (type === "Normal"){
-    return  `<img class="typeElement" src="images/type_normal.png"></img>`
-  }
-  
-  if (type === "Ice"){
-    return  `<img class="typeElement" src="images/type_ice.png"></img>`
-  }
-  
-  if (type === "Ghost"){
-    return  `<img class="typeElement" src="images/type_ghost.png"></img>`
-  }
-  
-  if (type === "Dragon"){
-    return  `<img class="typeElement" src="images/type_dragon.png"></img>`
-  }
-  
-  if (type === "Bug"){
-    return  `<img class="typeElement" src="images/type_bug.png"></img>`
-  }
-
-  return ""
-  }
-  // const containerCharts = document.querySelector('#containerCharts')
+}
   
 
    
