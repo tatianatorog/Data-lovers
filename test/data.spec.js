@@ -1,4 +1,4 @@
-import {orderNames, filterType} from '../src/data.js';
+import {orderNames, filterType, candyAmountAvg} from '../src/data.js';
 
 
 describe('sort data alphabetically', () => {
@@ -42,7 +42,6 @@ describe('sort data alphabetically', () => {
  });
 
  
- 
  describe('Filter by type', () => {
   it('Should be a function', () => {
     expect(typeof filterType).toBe('function');
@@ -63,12 +62,21 @@ describe('sort data alphabetically', () => {
   });
 });
 
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
 
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
+describe('Average candy count', () => {
+  it('Should be a function', () => {
+    expect(typeof candyAmountAvg).toBe('function');
+  });
+
+  it('should show the average candy count', () => {
+    const candyCount = [
+      { candy_count: [50] },
+      { candy_count: [100] },
+      { candy_count: [25]  },
+    ];
+    const output =
+      1
+    ;
+    expect(candyAmountAvg(candyCount)).toEqual(output);
+  });
+});

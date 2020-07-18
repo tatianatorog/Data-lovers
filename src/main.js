@@ -15,9 +15,6 @@ import {
   filterName,
   percentPokemon,
   candyAmountAvg,
-  sweetestPokemon,
-  minCandiesPokemon,
-  // computeType,
   
 } from './data.js';
 
@@ -87,15 +84,16 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     //Botones Menú
     const menuBar = document.querySelector("#menuBar");
     const menuContent = document.querySelector("#menuContent");
-    const home  = document.querySelector('#home')
-    const pokemonGalery = document.querySelector('#pokemonGalery')
+    // const home  = document.querySelector('#home');
+    const pokemonGalery = document.querySelector('#pokemonGalery');
     const subMenuSort = document.querySelector(".submenuSort"); 
-    const menuType = document.querySelector('.menuType')  
+    const menuType = document.querySelector('.menuType');  
     const menuSort = document.querySelector('.menuSort');
     const subMenuType= document.querySelector(".subMenuType");
-    const containerCharts = document.querySelector('#containerCharts')
-    let resultType = document.getElementById("bigContainerResult")
-    let searchName =document.querySelector("#searchName")
+    const containerCharts = document.querySelector('#containerCharts');
+    let resultType = document.getElementById("bigContainerResult");
+    let searchName =document.querySelector("#searchName");
+    const chartBtn = document.querySelector('#chartLink');
 
     //Mostrar y ocultar ventanas 
     const showMenuBar = () => {
@@ -103,11 +101,6 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
       };
     menuBar.addEventListener("click", showMenuBar);
     
-    // const showPokemon = () =>{
-    //   containerCharts.style.display= 'none'
-    //   createCard(allData)
-    //   }
-    // home.addEventListener('click', showPokemon) 
     
     const getOrderCards = (e)=>{
       const eventBtnSort= e.target.textContent
@@ -158,15 +151,7 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     createCard(filterName(allData,namePokemon))
     }
 
-    searchName.addEventListener( "keyup", getName )
-
-  
-
-  
-    const chartBtn = document.querySelector('#chartLink') 
-
-   
-   console.log(sweetestPokemon(allData))
+    searchName.addEventListener("keyup", getName)
   
    const showCharts = () =>{
     pokemonGalery.style.display= 'none'
@@ -175,6 +160,8 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
     
    }
    chartBtn.addEventListener('click', showCharts)
+
+   //Manejo del DOM 
   
   const infoPokemon = document.querySelector('#info');
    const title= document.createElement('h1')
@@ -213,7 +200,6 @@ function modal (id) {
   let modalPopup = document.getElementById("modal" + id);
   modalPopup.style.display = 'block';
   overlay.style.display = 'flex';
-  // console.log(modalPopup)
 }
       
 window.closeModal = closeModal;
@@ -254,9 +240,6 @@ function getImg (type) {
       case "Psychic":
       templateImgType = `<img class="typeElement" src="images/type_psychic.png"></img>`;
       break;
-      case "Psychic":
-      templateImgType = `<img class="typeElement" src="images/type_psychic.png"></img>`;
-      break;
       case "Electric":
       templateImgType = `<img class="typeElement" src="images/type_electric.png"></img>`;
       break;
@@ -267,7 +250,7 @@ function getImg (type) {
       templateImgType = `<img class="typeElement" src="images/type_ice.png"></img>`;
       break;
       case "Ghost":
-      templateImgType = `<img class="typeElement" src="images/type_ghost.png"></img>`;
+      // templateImgType = `<img class="typeElement" src="images/type_ghost.png"></img>`;
       break;
       case  "Dragon":
       templateImgType = `<img class="typeElement" src="images/type_dragon.png"></img>`;

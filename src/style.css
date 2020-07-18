@@ -131,7 +131,7 @@ header nav ul li .menuSort li a span {
 	margin-left:10px;
 }
 
-header nav ul li #caret  {
+header nav ul li .caret  {
 	position: relative;
 	top:3px;
 	margin-left:10px;
