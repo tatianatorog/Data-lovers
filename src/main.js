@@ -15,6 +15,8 @@ import {
   filterName,
   percentPokemon,
   candyAmountAvg,
+  sweetestPokemon,
+  minCandiesPokemon,
   // computeType,
   
 } from './data.js';
@@ -101,11 +103,11 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
       };
     menuBar.addEventListener("click", showMenuBar);
     
-    const showPokemon = () =>{
-      containerCharts.style.display= 'none'
-      pokemonGalery.style.display= 'block'
-      }
-    home.addEventListener('click', showPokemon) 
+    // const showPokemon = () =>{
+    //   containerCharts.style.display= 'none'
+    //   createCard(allData)
+    //   }
+    // home.addEventListener('click', showPokemon) 
     
     const getOrderCards = (e)=>{
       const eventBtnSort= e.target.textContent
@@ -158,25 +160,44 @@ fetch('https://raw.githubusercontent.com/paulalenisb/BOG001-data-lovers/master/s
 
     searchName.addEventListener( "keyup", getName )
 
-    const avgCandy = candyAmountAvg(allData)
+  
 
   
-  // var mostExpPilot = allData.reduce(function (oldest, pilot) {
-  //   return (oldest.candy_count || 0) < pilot.candy_count ? oldest : pilot;
-  // }, {});
+    const chartBtn = document.querySelector('#chartLink') 
 
-  // console.log(mostExpPilot)
+   
+   console.log(sweetestPokemon(allData))
+  
+   const showCharts = () =>{
+    pokemonGalery.style.display= 'none'
+    // resultType.style.display= 'none'
+    containerCharts.style.display= 'block'
+    
+   }
+   chartBtn.addEventListener('click', showCharts)
+  
+  const infoPokemon = document.querySelector('#info');
+   const title= document.createElement('h1')
+   title.textContent = 'Important data about the Pokemon'
+   infoPokemon.appendChild(title);
 
-//  const newComputeType = allData.reduce((contador, option) => {
-//   if (option === "Grass") {
-//     return contador + 1;
-//   } else {
-//    return contador;
-//   }
+   const textNoCandies = document.createElement('p');
+   textNoCandies.innerHTML = `It is the only pokemon in  Kanto region that doesn't eat candy  <strong>${allData[150].name} <img src="${allData[150].img}" alt="pokemon_150">`;
+   infoPokemon.appendChild(textNoCandies);
 
-//  }, 0);
+   const textCandies = document.createElement('p');
+   textCandies.innerHTML = ` It is the  pokemon that  eat more amount of candy in the  Kanto region  <strong>${allData[129].name} <img src="${allData[129].img}" alt="pokemon_150">`;
+   infoPokemon.appendChild(textCandies);
 
-//  console.log(newComputeType)
+   const textAvgCandies = document.createElement('p');
+   textAvgCandies.textContent = " In the Kanto region the pokemon´s candy count average is " + candyAmountAvg(allData);
+   infoPokemon.appendChild(textAvgCandies);
+
+   const titleChartType= document.createElement('h2')
+   titleChartType.textContent = 'Percent according to the type of Pokemon'
+
+   infoPokemon.appendChild(titleChartType);
+
 
 
 
